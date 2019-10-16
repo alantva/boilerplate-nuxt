@@ -6,4 +6,8 @@ describe('Logo', () => {
     const wrapper = mount(Logo)
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
+  test('is a Vue instance [should fail]', () => {
+    const wrapper = mount(Logo)
+    expect(wrapper.isVueInstance()).toBeFalsy()
+  })
 })

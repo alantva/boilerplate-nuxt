@@ -11,7 +11,7 @@
     "generate": "nuxt generate",
     "lint": "yarn lint:scss && yarn lint:js",
     "lint:js": "eslint . --ext .js,.vue --ignore-path .gitignore .",
-    "lint:scss": "stylelint '*.scss' --syntax scss",
+    "lint:scss": "stylelint './**/*.scss' --syntax scss",
     "lint:fix": "yarn lint:scss:fix && yarn lint:js:fix",
     "lint:js:fix": "yarn lint:js -- --fix",
     "lint:scss:fix": "yarn lint:scss -- --fix",
@@ -19,10 +19,12 @@
   },
   "lint-staged": {
     "*.{js,vue}": [
-      "yarn --silent lint:js:fix", "git add"
+      "yarn --silent lint:js:fix",
+      "git add"
     ],
     "*.scss": [
-      "yarn --silent lint:scss:fix", "git add"
+      "yarn --silent lint:scss:fix",
+      "git add"
     ]
   },
   "husky": {
@@ -32,27 +34,33 @@
     }
   },
   "dependencies": {
-    "nuxt": "^2.0.0",
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "@nuxtjs/style-resources": "^1.0.0",
     "cross-env": "^5.2.0",
     "express": "^4.16.4",
-    "@nuxtjs/axios": "^5.3.6",
-    "@nuxtjs/pwa": "^3.0.0-0"
+    "node-sass": "^4.12.0",
+    "nuxt": "^2.0.0",
+    "sass-loader": "^8.0.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9",
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/eslint-module": "^1.0.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^6.1.0",
-    "eslint-plugin-nuxt": ">=0.4.2",
-    "eslint-config-prettier": "^4.1.0",
-    "eslint-plugin-prettier": "^3.0.1",
-    "prettier": "^1.16.4",
-    "husky": "^2.6.0",
-    "lint-staged": "^8.2.1",
     "@vue/test-utils": "^1.0.0-beta.27",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "eslint-plugin-prettier": "^3.0.1",
+    "husky": "^2.6.0",
     "jest": "^24.1.0",
+    "lint-staged": "^8.2.1",
+    "nodemon": "^1.18.9",
+    "prettier": "^1.16.4",
+    "stylelint": "^11.1.1",
+    "stylelint-config-recommended-scss": "^4.0.0",
+    "stylelint-scss": "^3.11.1",
     "vue-jest": "^4.0.0-0"
   }
 }
