@@ -1,12 +1,14 @@
 <template>
-  <div>
+  <div class="theme--light">
     <nuxt />
   </div>
 </template>
 
 <style lang="scss">
-html {
-  background-color: t($theme, 'background');
-  color: t($theme, 'on-background');
+@each $theme in $themes {
+  .theme--#{$theme} {
+    background-color: t($theme, 'background');
+    color: t($theme, 'on-background');
+  }
 }
 </style>
