@@ -1,0 +1,36 @@
+$theme: 'light';
+
+$theme-list: (
+  dark: (
+    primary: #bb86fc,
+    primary-variant: #3700b3,
+    secondary: #03dac6,
+    secondary-variant: #03dac6,
+    background: #121212,
+    surface: #121212,
+    error: #cf6679,
+    on-primary: #000000,
+    on-secondary: #000000,
+    on-background: #ffffff,
+    on-surface: #ffffff,
+    on-error: #000000
+  ),
+  light: (
+    primary: #6200ee,
+    primary-variant: #3700b3,
+    secondary: #03dac6,
+    secondary-variant: #018786,
+    background: #ffffff,
+    surface: #ffffff,
+    error: #b00020,
+    on-primary: #ffffff,
+    on-secondary: #ffffff,
+    on-background: #526488,
+    on-surface: #526488,
+    on-error: #ffffff
+  )
+);
+
+@function t($t, $p) {
+  @return map-get(map-get($theme-list, $t), $p)
+}
