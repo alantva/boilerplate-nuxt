@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
 html {
   font-size: 16px;
   word-spacing: 1px;
@@ -13,6 +13,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  background-color: $color;
 }
 
 *,

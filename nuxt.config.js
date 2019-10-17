@@ -49,6 +49,9 @@ module.exports = {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  styleResources: {
+    scss: ['@/assets/scss/variables/*.scss']
+  },
   /*
    ** Build configuration
    */

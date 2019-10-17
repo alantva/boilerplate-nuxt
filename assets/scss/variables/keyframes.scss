@@ -1,0 +1,57 @@
+@keyframes fadeInDown {
+  from {transform: translateY(-50%); opacity: 0}
+  to {transform: translateY(0%); opacity: 1}
+}
+
+@keyframes fadeInUp {
+  from {transform: translateY(50%); opacity: 0}
+  to {transform: translateY(0%); opacity: 1}
+}
+
+@keyframes fadeInLeft {
+  from {transform: translateX(-50%); opacity: 0}
+  to {transform: translateX(0%); opacity: 1}
+}
+
+@keyframes fadeInRight {
+  from {transform: translateX(50%); opacity: 0}
+  to {transform: translateX(0%); opacity: 1}
+}
+
+@keyframes fadeOutDown {
+  from {transform: translateY(0%); opacity: 1}
+  to {transform: translateY(-50%); opacity: 0}
+}
+
+@keyframes fadeOutUp {
+  from {transform: translateY(0%); opacity: 1}
+  to {transform: translateY(50%); opacity: 0}
+}
+
+@keyframes fadeOutLeft {
+  from {transform: translateX(0%); opacity: 1}
+  to {transform: translateX(-50%); opacity: 0}
+}
+
+@keyframes fadeOutRight {
+  from {transform: translateX(0%); opacity: 1}
+  to {transform: translateX(50%); opacity: 0}
+}
+
+@keyframes rotateZ {
+  0% {transform: rotateZ(0deg);}
+  50% {transform: rotateZ(180deg);}
+  100% {transform: rotateZ(360deg);}
+}
+
+@keyframes blink {
+  20% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+}
