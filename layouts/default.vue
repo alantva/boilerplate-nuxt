@@ -1,10 +1,29 @@
 <template>
-  <div class="theme--light">
+  <div :class="theme">
+    <div>
+      <Button outlined @click="theme = 'theme--dark'">
+        Dark
+      </Button>
+      <Button color="secondary" outlined @click="theme = 'theme--light'">
+        Light
+      </Button>
+    </div>
     <nuxt />
   </div>
 </template>
 
-<style lang="scss">
+<script>
+import Button from '~/components/Button'
+
+export default {
+  components: {
+    Button
+  },
+  data: () => ({ theme: 'theme--dark' })
+}
+</script>
+
+<style lang="scss" scoped>
 @each $theme in $themes {
   .theme--#{$theme} {
     background-color: t($theme, 'background');

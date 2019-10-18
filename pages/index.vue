@@ -9,8 +9,8 @@
         My stellar Nuxt.js project
       </h2>
       <div class="links">
-        <Button class="button--primary">Documentation</Button>
-        <Button class="button--secondary">GitHub</Button>
+        <Button>Documentation</Button>
+        <Button color="secondary">GitHub</Button>
       </div>
     </div>
   </div>
