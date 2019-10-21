@@ -1,4 +1,4 @@
-$themes: ('light', 'dark');
+$component-themes: ('light', 'dark');
 $component-colors: ('primary', 'secondary');
 
 $theme-list: (
@@ -9,11 +9,13 @@ $theme-list: (
     secondary-variant: #03dac6,
     background: #121212,
     surface: #121212,
+    colorless: #777777,
     error: #cf6679,
     on-primary: #000000,
     on-secondary: #000000,
     on-background: #ffffff,
     on-surface: #ffffff,
+    on-colorless: #d3d3d3,
     on-error: #000000
   ),
   light: (
@@ -23,11 +25,13 @@ $theme-list: (
     secondary-variant: #018786,
     background: #ffffff,
     surface: #ffffff,
+    colorless: #777777,
     error: #b00020,
     on-primary: #ffffff,
     on-secondary: #ffffff,
     on-background: #526488,
     on-surface: #526488,
+    on-colorless: #d3d3d3,
     on-error: #ffffff
   )
 );

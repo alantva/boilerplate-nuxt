@@ -1,10 +1,10 @@
 <template>
   <div :class="theme">
     <div>
-      <Button outlined @click="theme = 'theme--dark'">
+      <Button color="primary" @click="theme = 'theme--dark'">
         Dark
       </Button>
-      <Button color="secondary" outlined @click="theme = 'theme--light'">
+      <Button color="secondary" @click="theme = 'theme--light'">
         Light
       </Button>
     </div>
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@each $theme in $themes {
+@each $theme in $component-themes {
   .theme--#{$theme} {
     background-color: t($theme, 'background');
     color: t($theme, 'on-background');
