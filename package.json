@@ -22,7 +22,7 @@
   },
   "lint-staged": {
     "*.{js,vue}": [
-      "yarn --silent lint:js:fix",
+      "yarn --silent lint:js",
       "git add"
     ],
     "*.scss": [
