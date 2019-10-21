@@ -12,10 +12,5 @@ describe('Button', () => {
       const button = wrapper.find('button').exists()
       expect(button).toBeTruthy()
     })
-    test('is clickable', () => {
-      const wrapper = mount(Button)
-      wrapper.find('button').trigger('click')
-      expect(wrapper.emitted()).toBeTruthy()
-    })
   })
 })
