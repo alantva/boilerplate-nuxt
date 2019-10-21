@@ -66,10 +66,12 @@ export default {
 
       &.label--title {
         font-size: 2rem;
+        font-weight: 900;
       }
 
       &.label--subtitle {
         font-size: 1.2rem;
+        font-weight: 900;
       }
 
       &.label--caption {
