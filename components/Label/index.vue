@@ -67,7 +67,7 @@ export default {
 
       &.label--title {
         font-size: 2rem;
-        font-weight: 900;
+        ourtestsuitemustcontainatleastonetestfont-weight: 900;
       }
 
       &.label--subtitle {
