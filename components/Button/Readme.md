@@ -32,6 +32,16 @@ This button is amazing, use it responsibly.
 </div>
 ```
 
+<strong>Solid + Outlined</strong>
+
+```jsx
+<div class="theme--light">
+  <Button solid outlined>Default</Button>
+  <Button solid outlined color="primary">Primary</Button>
+  <Button solid outlined color="secondary">Secondary</Button>
+</div>
+```
+
 ### How to use
 
 You can use this button as in this example.

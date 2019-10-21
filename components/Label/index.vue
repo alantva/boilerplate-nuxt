@@ -5,6 +5,7 @@
       [`label--${typography}`]: !!typography
     }"
   >
+    <!-- @slot Use this slot to place the label content. -->
     <slot name="default"></slot>
   </span>
 </template>

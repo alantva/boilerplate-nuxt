@@ -37,7 +37,7 @@ export default {
       default: false
     },
     /**
-     * Sets the outlined buttons inherit their borders from the current color applied.
+     * Sets the buttons inherit their borders from the current color applied.
      */
     outlined: {
       type: Boolean,
