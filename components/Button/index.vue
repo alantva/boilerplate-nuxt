@@ -54,7 +54,7 @@ export default {
        * @event click
        * @type {Event}
        */
-      this.$emit('click', e)
+      return this.$emit('click', e)
     }
   }
 }

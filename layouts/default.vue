@@ -1,6 +1,6 @@
 <template>
   <div :class="theme">
-    <div>
+    <div class="themes-links">
       <Button color="primary" @click="theme = 'theme--dark'">
         Dark
       </Button>
@@ -24,6 +24,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.themes-links {
+  position: absolute;
+  margin: 15px;
+}
+
 @each $theme in $component-themes {
   .theme--#{$theme} {
     background-color: t($theme, 'background');

@@ -1,16 +1,13 @@
 <template>
   <div class="container">
     <div>
-      <logo />
-      <h1 class="title">
-        Boilerplate Nuxt
-      </h1>
-      <h2 class="subtitle">
+      <Label typography="title">Boilerplate Nuxt</Label>
+      <Label typography="subtitle">
         My stellar Nuxt.js project
-      </h2>
+      </Label>
       <div class="links">
         <Button solid color="primary">Documentation</Button>
-        <Button outlined color="secondary">GitHub</Button>
+        <Button solid color="secondary">GitHub</Button>
       </div>
     </div>
   </div>
@@ -18,17 +15,17 @@
 
 <script>
 import Button from '~/components/Button'
-import Logo from '~/components/Logo'
+import Label from '~/components/Label'
 
 export default {
   components: {
     Button,
-    Logo
+    Label
   }
 }
 </script>
 
-<style>
+<style scoped>
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -36,20 +33,6 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.title {
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  word-spacing: 5px;
-  padding-bottom: 15px;
 }
 
 .links {

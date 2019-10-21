@@ -2,6 +2,7 @@ const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
   components: './components/**/*.vue',
+  require: ['./assets/scss/index.scss'],
   webpackConfig: {
     module: {
       rules: [
