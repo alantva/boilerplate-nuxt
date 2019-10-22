@@ -82,8 +82,13 @@ export default {
       padding: 10px 30px;
       transition: background-color 0.2s ease-in, color 0.2s ease-in;
       outline: none;
+      user-select: none;
       border-width: 1px;
       border-style: solid;
+      &:active {
+        position: relative;
+        top: 2px;
+      }
       /** Colorless style */
       &:not(.button--primary, .button--secondary) {
         @include button-color($theme, 'colorless');
