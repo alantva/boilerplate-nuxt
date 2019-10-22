@@ -8,6 +8,9 @@ describe('Button', () => {
       const wrapper = mount(Button)
       expect(wrapper.isVueInstance()).toBeTruthy()
     })
+  })
+  /** Slots */
+  describe('Slots', () => {
     test('have a text "Click me!"', () => {
       const wrapper = mount(Button, { slots: { default: 'Click me!' } })
       expect(wrapper.text()).toBe('Click me!')

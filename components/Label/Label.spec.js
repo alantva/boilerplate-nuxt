@@ -8,6 +8,9 @@ describe('Label', () => {
       const wrapper = mount(Label)
       expect(wrapper.isVueInstance()).toBeTruthy()
     })
+  })
+  /** Slots */
+  describe('Slots', () => {
     test('have a text "Label me!"', () => {
       const wrapper = mount(Label, { slots: { default: 'Label me!' } })
       expect(wrapper.text()).toBe('Label me!')

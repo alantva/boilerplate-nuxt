@@ -18,7 +18,7 @@
     "styleguide": "vue-styleguidist server",
     "styleguide:build": "vue-styleguidist build",
     "test": "jest",
-    "test:watch": "jest --watch --expand"
+    "test:watch": "jest --watchAll --verbose"
   },
   "lint-staged": {
     "*.{js,vue}": [
