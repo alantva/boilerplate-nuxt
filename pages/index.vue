@@ -6,8 +6,10 @@
         My pioneering Nuxt.js project
       </Label>
       <div class="links">
-        <Button solid color="primary">Documentation</Button>
-        <Button solid color="secondary">GitHub</Button>
+        <Button solid color="primary" @click="handleDocumentation">
+          Documentation
+        </Button>
+        <Button solid color="secondary" @click="handleGithub">GitHub</Button>
       </div>
     </div>
   </div>
@@ -21,6 +23,17 @@ export default {
   components: {
     Button,
     Label
+  },
+  methods: {
+    handleDocumentation() {
+      window.open(
+        'https://github.com/alantva/boilerplate-nuxt#introduction',
+        '_blank'
+      )
+    },
+    handleGithub() {
+      window.open('https://github.com/alantva/boilerplate-nuxt', '_blank')
+    }
   }
 }
 </script>
