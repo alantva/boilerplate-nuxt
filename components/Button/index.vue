@@ -4,7 +4,8 @@
     :class="{
       [`button--${color}`]: !!color,
       'button--solid': solid,
-      'button--outlined': outlined
+      'button--outlined': outlined,
+      'button--animated': animated
     }"
     @click="handleClick"
   >
@@ -42,6 +43,13 @@ export default {
     outlined: {
       type: Boolean,
       default: false
+    },
+    /**
+     * Sets the buttons animation to be applied.
+     */
+    animated: {
+      type: Boolean,
+      default: true
     }
   },
   methods: {
@@ -89,6 +97,9 @@ export default {
           @include button-outlined($theme, $color);
           @include button-solid($theme, $color);
         }
+      }
+      &.button--animated {
+        @include basicAnimation(fadeInUp, 0.5s);
       }
     }
   }

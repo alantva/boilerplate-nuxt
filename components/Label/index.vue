@@ -2,7 +2,8 @@
   <span
     :class="{
       [`label--${color}`]: !!color,
-      [`label--${typography}`]: !!typography
+      [`label--${typography}`]: !!typography,
+      'label--animated': animated
     }"
   >
     <!-- @slot Use this slot to place the label content. -->
@@ -35,6 +36,13 @@ export default {
       type: String,
       default: null,
       validator: (value) => ['title', 'subtitle', 'caption'].includes(value)
+    },
+    /**
+     * Sets the label animation to be applied.
+     */
+    animated: {
+      type: Boolean,
+      default: true
     }
   }
 }
@@ -74,6 +82,9 @@ export default {
         }
         &--caption {
           font-size: 0.8rem;
+        }
+        &--animated {
+          @include basicAnimation(fadeInUp, 0.5s);
         }
       }
     }

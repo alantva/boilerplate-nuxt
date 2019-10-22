@@ -44,6 +44,11 @@ describe('Label', () => {
         const classes = wrapper.find('span').classes()
         expect(classes).toContain('label--caption')
       })
+      test('has class "label--animated"', () => {
+        const wrapper = mount(Label)
+        const classes = wrapper.find('span').classes()
+        expect(classes).toContain('label--animated')
+      })
     })
   })
 })

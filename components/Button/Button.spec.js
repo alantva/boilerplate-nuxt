@@ -47,6 +47,11 @@ describe('Button', () => {
         const classes = wrapper.find('button').classes()
         expect(classes).toContain('button--outlined')
       })
+      test('has class "button--animated"', () => {
+        const wrapper = mount(Button)
+        const classes = wrapper.find('button').classes()
+        expect(classes).toContain('button--animated')
+      })
     })
   })
 })
