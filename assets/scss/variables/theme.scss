@@ -1,40 +1,33 @@
 $component-themes: ('light', 'dark');
 $component-colors: ('primary', 'secondary');
 
-$theme-list: (
-  dark: (
-    primary: #bb86fc,
-    primary-variant: #3700b3,
-    secondary: #03dac6,
-    secondary-variant: #03dac6,
-    background: #121212,
-    surface: #121212,
-    colorless: #777777,
-    error: #cf6679,
-    on-primary: #000000,
-    on-secondary: #000000,
-    on-background: #ffffff,
-    on-surface: #ffffff,
-    on-colorless: #d3d3d3,
-    on-error: #000000
-  ),
-  light: (
-    primary: #6200ee,
-    primary-variant: #3700b3,
-    secondary: #03dac6,
-    secondary-variant: #018786,
-    background: #ffffff,
-    surface: #ffffff,
-    colorless: #777777,
-    error: #b00020,
-    on-primary: #ffffff,
-    on-secondary: #ffffff,
-    on-background: #526488,
-    on-surface: #526488,
-    on-colorless: #d3d3d3,
-    on-error: #ffffff
-  )
+$dark-theme: (
+  primary: #bb86fc,
+  secondary: #03dac6,
+  background: #121212,
+  colorless: #777777,
+  error: #cf6679,
+  on-primary: #000000,
+  on-secondary: #000000,
+  on-background: #ffffff,
+  on-colorless: #d3d3d3,
+  on-error: #000000
 );
+
+$light-theme: (
+  primary: #6200ee,
+  secondary: #03dac6,
+  background: #ffffff,
+  colorless: #777777,
+  error: #b00020,
+  on-primary: #ffffff,
+  on-secondary: #ffffff,
+  on-background: #526488,
+  on-colorless: #d3d3d3,
+  on-error: #ffffff
+);
+
+$theme-list: (dark: $dark-theme, light: $light-theme);
 
 @function t($t, $p) {
   @return map-get(map-get($theme-list, $t), $p)

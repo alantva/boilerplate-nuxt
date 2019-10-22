@@ -48,6 +48,73 @@ $ yarn styleguide:build
 
 ```
 
+# Theme
+
+There are currently two themes for the application, where components inherit their colors based on each.
+
+### Dark Theme
+```scss
+$dark-theme: (
+  primary: #bb86fc,
+  secondary: #03dac6,
+  background: #121212,
+  colorless: #777777,
+  error: #cf6679,
+  on-primary: #000000,
+  on-secondary: #000000,
+  on-background: #ffffff,
+  on-colorless: #d3d3d3,
+  on-error: #000000
+);
+```
+### Light Theme
+```scss
+$light-theme: (
+  primary: #6200ee,
+  secondary: #03dac6,
+  background: #ffffff,
+  colorless: #777777,
+  error: #b00020,
+  on-primary: #ffffff,
+  on-secondary: #ffffff,
+  on-background: #526488,
+  on-colorless: #d3d3d3,
+  on-error: #ffffff
+);
+```
+
+## Theming
+
+The theme must be configured in the following [file](assets/scss/variables/theme.scss).
+
+To add a new theme, you must add the theme name to the following array:
+```scss
+$component-themes: ('light', 'dark');
+```
+
+And add all the properties:
+- `primary`: _main color for the application._
+- `secondary`: _secondary color for the application._
+- `background`: _background color for the application._
+- `colorless`: _default color for components._
+- `error`: _error color for the application._
+- `on-primary`: _main reverse color for the application._
+- `on-secondary`: _secondary reverse color for the application._
+- `on-background`: _background reverse color for the application._
+- `on-colorless`: _default reverse color for components._
+- `on-error`: _error reverse color for the application._
+
+In the array:
+```scss
+$theme-list: (dark: $dark-theme, light: $light-theme);
+```
+
+## Changing Theme
+
+The current theme control is based on a top `<div>` that is controlled by the theme class.
+
+This control is currently located in the file: [layouts/default.vue](/layouts/default.vue)
+
 # Components
 
 - [Button](/components/Button)
@@ -70,11 +137,10 @@ $ touch Readme.md
 # create component test file
 $ touch {ComponentName}.spec.js
 ```
-<span style="color: red; font-size: 2rem">Important!</span>
-
-1. Create a [single file component](https://br.vuejs.org/v2/guide/single-file-components.html).
-2. Use [Vue Styleguidist](https://github.com/vue-styleguidist/vue-styleguidist) to generate documentation.
-3. Create tests for component [Vue Test Utils](https://vue-test-utils.vuejs.org/guides/testing-single-file-components-with-jest.html).
+> Important!
+> 1. Create a [single file component](https://br.vuejs.org/v2/guide/single-file-components.html).
+> 2. Use [Vue Styleguidist](https://github.com/vue-styleguidist/vue-styleguidist) to generate documentation.
+> 3. Create tests for component [Vue Test Utils](https://vue-test-utils.vuejs.org/guides/testing-single-file-components-with-jest.html).
 
 ## Example
 
