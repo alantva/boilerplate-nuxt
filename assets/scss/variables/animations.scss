@@ -1,6 +1,0 @@
-@mixin basicAnimation($type, $duration) {
-  animation: $type $duration ease;
-}
-@mixin infiniteAnimation($type, $duration) {
-  animation: $type $duration infinite;
-}

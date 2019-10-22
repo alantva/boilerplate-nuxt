@@ -70,12 +70,13 @@ $ touch Readme.md
 # create component test file
 $ touch {ComponentName}.spec.js
 ```
+<span style="color: red; font-size: 2rem">Important!</span>
 
-Examples:
-
-Remember:
-1. Create a single file component.
+1. Create a [single file component](https://br.vuejs.org/v2/guide/single-file-components.html).
 2. Use [Vue Styleguidist](https://github.com/vue-styleguidist/vue-styleguidist) to generate documentation.
+3. Create tests for component [Vue Test Utils](https://vue-test-utils.vuejs.org/guides/testing-single-file-components-with-jest.html).
+
+## Example
 
 ```html
 <!-- index.vue -->
@@ -131,3 +132,9 @@ describe('`{ComponentName}`', () => {
   })
 })
 ```
+
+# License
+
+[MIT](https://opensource.org/licenses/MIT)
+
+Copyright (c) 2019-present, Alan Timossi Farias de Oliveira
