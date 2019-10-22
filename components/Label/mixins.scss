@@ -1,6 +1,0 @@
-/**
- * Sets the label inherit their base colors from the current color applied.
- */
-@mixin label-color($theme, $color) {
-  color: t($theme, $color);
-}

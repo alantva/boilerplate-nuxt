@@ -3,7 +3,7 @@
     <div>
       <Label typography="title">Boilerplate Nuxt</Label>
       <Label typography="subtitle">
-        My stellar Nuxt.js project
+        My pioneering Nuxt.js project
       </Label>
       <div class="links">
         <Button solid color="primary">Documentation</Button>

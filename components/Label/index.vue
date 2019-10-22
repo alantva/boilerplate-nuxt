@@ -41,8 +41,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import './mixins.scss';
-
 @each $theme in $component-themes {
   .theme--#{$theme} {
     span {
@@ -51,32 +49,32 @@ export default {
       transition: color 0.2s ease-in;
       /** Colorless style */
       &:not(.label--primary, .label--secondary) {
-        @include label-color($theme, 'on-background');
+        color: t($theme, 'on-background');
       }
       /** Colered style */
       @each $color in $component-colors {
         &.label--#{$color} {
-          @include label-color($theme, $color);
+          color: t($theme, 'on-background');
         }
       }
-      &.label--title,
-      &.label--subtitle,
-      &.label--caption {
-        display: block;
-      }
 
-      &.label--title {
-        font-size: 2rem;
-        ourtestsuitemustcontainatleastonetestfont-weight: 900;
-      }
-
-      &.label--subtitle {
-        font-size: 1.2rem;
-        font-weight: 900;
-      }
-
-      &.label--caption {
-        font-size: 0.8rem;
+      &.label {
+        &--title,
+        &--subtitle,
+        &--caption {
+          display: block;
+        }
+        &--title {
+          font-size: 2rem;
+          font-weight: 900;
+        }
+        &--subtitle {
+          font-size: 1.2rem;
+          font-weight: 900;
+        }
+        &--caption {
+          font-size: 0.8rem;
+        }
       }
     }
   }
