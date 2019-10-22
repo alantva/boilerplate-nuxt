@@ -24,6 +24,12 @@ describe('Index', () => {
         wrapper.vm.handleGithub()
         expect(global.open).toBeCalled()
       })
+      test('and trigger `handleChangelog`', () => {
+        const wrapper = mount(Index)
+        global.open = jest.fn()
+        wrapper.vm.handleChangelog()
+        expect(global.open).toBeCalled()
+      })
     })
   })
 })

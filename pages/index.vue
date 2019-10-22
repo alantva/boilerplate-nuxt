@@ -10,6 +10,9 @@
           Documentation
         </Button>
         <Button solid color="secondary" @click="handleGithub">GitHub</Button>
+        <Button solid @click="handleChangelog">
+          Changelog
+        </Button>
       </div>
     </div>
   </div>
@@ -26,13 +29,20 @@ export default {
   },
   methods: {
     handleDocumentation() {
-      window.open(
-        'https://github.com/alantva/boilerplate-nuxt#introduction',
-        '_blank'
-      )
+      const url = 'https://github.com/alantva/boilerplate-nuxt#introduction'
+      return this.windowOpen(url)
     },
     handleGithub() {
-      window.open('https://github.com/alantva/boilerplate-nuxt', '_blank')
+      const url = 'https://github.com/alantva/boilerplate-nuxt'
+      return this.windowOpen(url)
+    },
+    handleChangelog() {
+      const url =
+        'https://github.com/alantva/boilerplate-nuxt/blob/master/CHANGELOG.md#changelog'
+      return this.windowOpen(url)
+    },
+    windowOpen(url) {
+      return window.open(url, '_blank')
     }
   }
 }
