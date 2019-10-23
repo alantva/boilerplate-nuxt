@@ -1,3 +1,8 @@
+const deployRouter =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? { router: { base: '/boilerplate-nuxt/' } }
+    : {}
+
 module.exports = {
   mode: 'spa',
   /*
@@ -36,6 +41,10 @@ module.exports = {
     '@nuxtjs/eslint-module'
   ],
   /*
+   ** Nuxt.js router
+   */
+  ...deployRouter,
+  /*
    ** Nuxt.js modules
    */
   modules: [
@@ -49,6 +58,10 @@ module.exports = {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  /**
+   * Style Resources Module
+   * See https://github.com/nuxt-community/style-resources-module
+   */
   styleResources: {
     scss: ['@/assets/scss/variables/*.scss']
   },
