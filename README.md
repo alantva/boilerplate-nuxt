@@ -31,6 +31,22 @@ $ yarn start
 $ yarn generate
 ```
 
+## Deploy in GitHub
+
+``` bash
+# generate static project for gh-pages
+$ yarn generate:gh-pages
+
+# push the dist repository
+$ git add dist -f
+$ git commit -n -m "Deploying to gh-pages"
+$ git push
+
+# deploy to gh-pages
+$ yarn deploy:gh-pages
+
+```
+
 ## Useful scripts 
 
 
