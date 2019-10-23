@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const deployRouter =
   process.env.DEPLOY_ENV === 'GH_PAGES'
     ? { router: { base: '/boilerplate-nuxt/' } }
