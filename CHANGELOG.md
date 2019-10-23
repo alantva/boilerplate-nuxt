@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.1] - 2019-10-23
+
+### Added
+
+- Deploy into [GitHub Pages](https://nuxtjs.org/faq/github-pages/).
+
+### Changed
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
 ## [0.0.0] - 2019-10-22
 
 ### Added
