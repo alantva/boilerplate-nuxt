@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import Validators from '../../utils/components/validators'
+
 export default {
   /**
    * Label component.
@@ -25,7 +27,7 @@ export default {
     color: {
       type: String,
       default: null,
-      validator: (value) => ['primary', 'secondary', 'error'].includes(value)
+      validator: Validators.colors
     },
     /**
      * Sets the label typography.
@@ -34,7 +36,7 @@ export default {
     typography: {
       type: String,
       default: null,
-      validator: (value) => ['title', 'subtitle', 'caption'].includes(value)
+      validator: Validators.typography
     }
   }
 }

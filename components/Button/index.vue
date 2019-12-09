@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import Validators from '../../utils/components/validators'
+
 export default {
   /**
    * Button component.
@@ -29,7 +31,7 @@ export default {
     color: {
       type: String,
       default: null,
-      validator: (value) => ['primary', 'secondary', 'error'].includes(value)
+      validator: Validators.colors
     },
     /**
      * Sets the buttons inherit their colors from the current color applied.
