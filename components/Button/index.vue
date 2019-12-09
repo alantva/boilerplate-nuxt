@@ -51,9 +51,6 @@ export default {
      * Gets called when the user clicks on the button
      */
     handleClick(e) {
-      if (this.disabled) {
-        return
-      }
       /**
        * Triggered when button is clicked
        * @event click
