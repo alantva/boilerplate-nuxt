@@ -3,6 +3,10 @@
   "version": "0.0.3",
   "description": "My pioneering Nuxt.js project",
   "author": "Alan Timossi Farias de Oliveira",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/alantva/boilerplate-nuxt"
+  },
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",

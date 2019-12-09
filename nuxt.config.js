@@ -8,6 +8,14 @@ const deployRouter =
 module.exports = {
   mode: 'spa',
   /*
+   ** Env
+   */
+  env: {
+    description: process.env.npm_package_description,
+    version: process.env.npm_package_version,
+    repositoryUrl: process.env.npm_package_repository_url
+  },
+  /*
    ** Headers of the page
    */
   head: {

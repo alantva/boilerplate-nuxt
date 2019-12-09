@@ -2,9 +2,8 @@
   <div class="container">
     <div>
       <Label typography="title">Boilerplate Nuxt</Label>
-      <Label typography="subtitle">
-        My pioneering Nuxt.js project
-      </Label>
+      <Label>{{ description }}</Label>
+      <Label typography="caption">v{{ version }}</Label>
       <div class="links">
         <Button solid color="primary" @click="handleDocumentation">
           Documentation
@@ -19,20 +18,22 @@
 </template>
 
 <script>
+const myRepo = process.env.repository_url
+
 export default {
+  data: () => ({
+    description: process.env.description,
+    version: process.env.version
+  }),
   methods: {
     handleDocumentation() {
-      const url = 'https://github.com/alantva/boilerplate-nuxt#introduction'
-      return this.windowOpen(url)
+      return this.windowOpen(myRepo + '#introduction')
     },
     handleGithub() {
-      const url = 'https://github.com/alantva/boilerplate-nuxt'
-      return this.windowOpen(url)
+      return this.windowOpen(myRepo)
     },
     handleChangelog() {
-      const url =
-        'https://github.com/alantva/boilerplate-nuxt/blob/master/CHANGELOG.md#changelog'
-      return this.windowOpen(url)
+      return this.windowOpen(myRepo + '/blob/master/CHANGELOG.md#changelog')
     },
     windowOpen(url) {
       return window.open(url, '_blank')
