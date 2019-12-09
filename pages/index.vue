@@ -50,6 +50,8 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .links {

@@ -44,6 +44,7 @@ export default {
 /* Default */
 span {
   /** Basic style */
+  display: block;
   text-decoration: none;
   transition: color 0.2s ease-in;
   @include basicAnimation(fadeInUp, 0.5s);
@@ -65,11 +66,6 @@ span {
 }
 /* Typography */
 .label {
-  &--title,
-  &--subtitle,
-  &--caption {
-    display: block;
-  }
   &--title {
     font-size: 2rem;
     font-weight: 900;
