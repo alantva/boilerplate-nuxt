@@ -6,6 +6,7 @@
       'button--solid': solid,
       'button--outlined': outlined
     }"
+    :disabled="disabled"
     @click="handleClick"
   >
     <!-- @slot Use this slot to place the button content. -->
@@ -37,19 +38,26 @@ export default {
     /**
      * Sets the buttons inherit their borders from the current color applied.
      */
-    outlined: Boolean
+    outlined: Boolean,
+    /**
+     * Disable the button.
+     */
+    disabled: Boolean
   },
   methods: {
     /**
      * Gets called when the user clicks on the button
      */
     handleClick(e) {
+      if (this.disabled) {
+        return
+      }
       /**
        * Triggered when button is clicked
        * @event click
        * @type {Event}
        */
-      return this.$emit('click', e)
+      this.$emit('click', e)
     }
   }
 }
@@ -64,14 +72,16 @@ button {
   display: inline-block;
   border-radius: 4px;
   text-decoration: none;
-  cursor: pointer;
   padding: 10px 30px;
-  transition: background-color 0.2s ease-in, color 0.2s ease-in;
   outline: none;
   user-select: none;
   border-width: 1px;
   border-style: solid;
-  @include basicAnimation(fadeInUp, 0.5s);
+  &:not(:disabled) {
+    @include basicAnimation(fadeInUp, 0.5s);
+    transition: background-color 0.2s ease-in, color 0.2s ease-in;
+    cursor: pointer;
+  }
   &:active {
     position: relative;
     top: 2px;
@@ -80,7 +90,7 @@ button {
 /* Color */
 @each $theme in $component-themes {
   .theme--#{$theme} {
-    button {
+    button:not(:disabled) {
       /** Default style */
       @include button-styles($theme, 'text');
       /** Colered style */

@@ -46,6 +46,17 @@ This button is amazing, use it responsibly.
 </div>
 ```
 
+<strong>Disabled</strong>
+
+```jsx
+<div class="theme--light">
+  <Button disabled>Default</Button>
+  <Button disabled color="primary">Primary</Button>
+  <Button disabled color="secondary">Secondary</Button>
+  <Button disabled color="error">Error</Button>
+</div>
+```
+
 ### How to use
 
 You can use this button as in this example.

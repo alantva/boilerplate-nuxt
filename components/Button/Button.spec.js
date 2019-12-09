@@ -20,8 +20,13 @@ describe('Button', () => {
   describe('Events', () => {
     test('have a HTML button what is clickable', () => {
       const wrapper = mount(Button)
-      wrapper.find('button').trigger('click')
-      expect(wrapper.emitted()).toBeTruthy()
+      wrapper.vm.handleClick()
+      expect(wrapper.emitted().click).toBeTruthy()
+    })
+    test('have a HTML button what is not clickable', () => {
+      const wrapper = mount(Button, { propsData: { disabled: true } })
+      wrapper.vm.handleClick()
+      expect(wrapper.emitted().click).toBeFalsy()
     })
   })
   /** Props */
