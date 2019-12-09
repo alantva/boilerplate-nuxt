@@ -41,7 +41,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -53,5 +53,13 @@ export default {
 
 .links {
   padding-top: 15px;
+
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    > button:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
 }
 </style>
