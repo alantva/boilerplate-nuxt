@@ -29,6 +29,11 @@ describe('Label', () => {
         const classes = wrapper.find('span').classes()
         expect(classes).toContain('label--secondary')
       })
+      test('has class "label--error"', () => {
+        const wrapper = mount(Label, { propsData: { color: 'error' } })
+        const classes = wrapper.find('span').classes()
+        expect(classes).toContain('label--error')
+      })
       test('has class "label--title"', () => {
         const wrapper = mount(Label, { propsData: { typography: 'title' } })
         const classes = wrapper.find('span').classes()
@@ -43,11 +48,6 @@ describe('Label', () => {
         const wrapper = mount(Label, { propsData: { typography: 'caption' } })
         const classes = wrapper.find('span').classes()
         expect(classes).toContain('label--caption')
-      })
-      test('has class "label--animated"', () => {
-        const wrapper = mount(Label)
-        const classes = wrapper.find('span').classes()
-        expect(classes).toContain('label--animated')
       })
     })
   })

@@ -4,8 +4,7 @@
     :class="{
       [`button--${color}`]: !!color,
       'button--solid': solid,
-      'button--outlined': outlined,
-      'button--animated': animated
+      'button--outlined': outlined
     }"
     @click="handleClick"
   >
@@ -24,33 +23,21 @@ export default {
   props: {
     /**
      * Sets the button color.
-     * `(primary|secondary)`
+     * `(primary|secondary|error)`
      */
     color: {
       type: String,
-      default: null
+      default: null,
+      validator: (value) => ['primary', 'secondary', 'error'].includes(value)
     },
     /**
      * Sets the buttons inherit their colors from the current color applied.
      */
-    solid: {
-      type: Boolean,
-      default: false
-    },
+    solid: Boolean,
     /**
      * Sets the buttons inherit their borders from the current color applied.
      */
-    outlined: {
-      type: Boolean,
-      default: false
-    },
-    /**
-     * Sets the buttons animation to be applied.
-     */
-    animated: {
-      type: Boolean,
-      default: true
-    }
+    outlined: Boolean
   },
   methods: {
     /**
@@ -84,12 +71,10 @@ button {
   user-select: none;
   border-width: 1px;
   border-style: solid;
+  @include basicAnimation(fadeInUp, 0.5s);
   &:active {
     position: relative;
     top: 2px;
-  }
-  &.button--animated {
-    @include basicAnimation(fadeInUp, 0.5s);
   }
 }
 /* Color */

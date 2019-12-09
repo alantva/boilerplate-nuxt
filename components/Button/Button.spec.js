@@ -37,6 +37,11 @@ describe('Button', () => {
         const classes = wrapper.find('button').classes()
         expect(classes).toContain('button--secondary')
       })
+      test('has class "button--error"', () => {
+        const wrapper = mount(Button, { propsData: { color: 'error' } })
+        const classes = wrapper.find('button').classes()
+        expect(classes).toContain('button--error')
+      })
       test('has class "button--solid"', () => {
         const wrapper = mount(Button, { propsData: { solid: true } })
         const classes = wrapper.find('button').classes()
@@ -46,11 +51,6 @@ describe('Button', () => {
         const wrapper = mount(Button, { propsData: { outlined: true } })
         const classes = wrapper.find('button').classes()
         expect(classes).toContain('button--outlined')
-      })
-      test('has class "button--animated"', () => {
-        const wrapper = mount(Button)
-        const classes = wrapper.find('button').classes()
-        expect(classes).toContain('button--animated')
       })
     })
   })

@@ -2,8 +2,7 @@
   <span
     :class="{
       [`label--${color}`]: !!color,
-      [`label--${typography}`]: !!typography,
-      'label--animated': animated
+      [`label--${typography}`]: !!typography
     }"
   >
     <!-- @slot Use this slot to place the label content. -->
@@ -21,12 +20,12 @@ export default {
   props: {
     /**
      * Sets the label color.
-     * `(primary|secondary)`
+     * `(primary|secondary|error)`
      */
     color: {
       type: String,
       default: null,
-      validator: (value) => ['primary', 'secondary'].includes(value)
+      validator: (value) => ['primary', 'secondary', 'error'].includes(value)
     },
     /**
      * Sets the label typography.
@@ -36,13 +35,6 @@ export default {
       type: String,
       default: null,
       validator: (value) => ['title', 'subtitle', 'caption'].includes(value)
-    },
-    /**
-     * Sets the label animation to be applied.
-     */
-    animated: {
-      type: Boolean,
-      default: true
     }
   }
 }
@@ -54,6 +46,7 @@ span {
   /** Basic style */
   text-decoration: none;
   transition: color 0.2s ease-in;
+  @include basicAnimation(fadeInUp, 0.5s);
 }
 /* Color */
 @each $theme in $component-themes {
@@ -87,9 +80,6 @@ span {
   }
   &--caption {
     font-size: 0.8rem;
-  }
-  &--animated {
-    @include basicAnimation(fadeInUp, 0.5s);
   }
 }
 </style>
