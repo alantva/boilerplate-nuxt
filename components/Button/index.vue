@@ -71,40 +71,38 @@ export default {
 <style lang="scss" scoped>
 @import './mixins.scss';
 
+/* Default */
+button {
+  /** Basic style */
+  display: inline-block;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px 30px;
+  transition: background-color 0.2s ease-in, color 0.2s ease-in;
+  outline: none;
+  user-select: none;
+  border-width: 1px;
+  border-style: solid;
+  &:active {
+    position: relative;
+    top: 2px;
+  }
+  &.button--animated {
+    @include basicAnimation(fadeInUp, 0.5s);
+  }
+}
+/* Color */
 @each $theme in $component-themes {
   .theme--#{$theme} {
     button {
-      /** Basic style */
-      display: inline-block;
-      border-radius: 4px;
-      text-decoration: none;
-      cursor: pointer;
-      padding: 10px 30px;
-      transition: background-color 0.2s ease-in, color 0.2s ease-in;
-      outline: none;
-      user-select: none;
-      border-width: 1px;
-      border-style: solid;
-      &:active {
-        position: relative;
-        top: 2px;
-      }
-      /** Colorless style */
-      &:not(.button--primary, .button--secondary) {
-        @include button-color($theme, 'colorless');
-        @include button-outlined($theme, 'colorless');
-        @include button-solid($theme, 'colorless');
-      }
+      /** Default style */
+      @include button-styles($theme, 'text');
       /** Colered style */
       @each $color in $component-colors {
         &.button--#{$color} {
-          @include button-color($theme, $color);
-          @include button-outlined($theme, $color);
-          @include button-solid($theme, $color);
+          @include button-styles($theme, $color);
         }
-      }
-      &.button--animated {
-        @include basicAnimation(fadeInUp, 0.5s);
       }
     }
   }

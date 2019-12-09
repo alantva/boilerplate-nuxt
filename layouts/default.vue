@@ -13,12 +13,7 @@
 </template>
 
 <script>
-import Button from '~/components/Button'
-
 export default {
-  components: {
-    Button
-  },
   data: () => ({ theme: 'theme--dark' })
 }
 </script>
@@ -32,7 +27,7 @@ export default {
 @each $theme in $component-themes {
   .theme--#{$theme} {
     background-color: t($theme, 'background');
-    color: t($theme, 'on-background');
+    color: t($theme, 'text');
   }
 }
 </style>

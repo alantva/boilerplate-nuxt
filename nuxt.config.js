@@ -34,7 +34,10 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '@/plugins/axios.js', mode: 'client' }],
+  plugins: [
+    { src: '@/plugins/global-components.js', mode: 'client' },
+    { src: '@/plugins/axios.js', mode: 'client' }
+  ],
   /*
    ** Nuxt.js dev-modules
    */

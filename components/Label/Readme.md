@@ -11,6 +11,8 @@ This label is amazing, use it responsibly.
   <Label color="primary">Primary</Label>
   <br />
   <Label color="secondary">Secondary</Label>
+  <br />
+  <Label color="error">Error</Label>
 </div>
 ```
 
@@ -18,9 +20,9 @@ This label is amazing, use it responsibly.
 
 ```jsx
 <div class="theme--light">
-  <Label typography="title">Title</Label>
-  <Label typography="subtitle">Subtitle</Label>
-  <Label typography="caption">Caption</Label>
+  <Label color="primary" typography="title">Title</Label>
+  <Label color="primary" typography="subtitle">Subtitle</Label>
+  <Label color="primary" typography="caption">Caption</Label>
 </div>
 ```
 

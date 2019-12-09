@@ -19,14 +19,7 @@
 </template>
 
 <script>
-import Button from '~/components/Button'
-import Label from '~/components/Label'
-
 export default {
-  components: {
-    Button,
-    Label
-  },
   methods: {
     handleDocumentation() {
       const url = 'https://github.com/alantva/boilerplate-nuxt#introduction'

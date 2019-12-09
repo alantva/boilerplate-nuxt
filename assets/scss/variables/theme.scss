@@ -1,29 +1,39 @@
 $component-themes: ('light', 'dark');
-$component-colors: ('primary', 'secondary');
+$component-colors: ('primary', 'secondary', 'error');
 
 $dark-theme: (
+  /* Primary */
   primary: #bb86fc,
-  secondary: #03dac6,
-  background: #121212,
-  colorless: #777777,
-  error: #cf6679,
   on-primary: #000000,
+  /* Secondary */
+  secondary: #03dac6,
   on-secondary: #000000,
-  on-background: #ffffff,
-  on-colorless: #d3d3d3,
+  /* Text */
+  text: #d3d3d3,
+  on-text: #686868,
+  /* Background */
+  background: #121212,
+  on-background: #fafafa,
+  /* Error */
+  error: #cf6679,
   on-error: #000000
 );
 
 $light-theme: (
+  /* Primary */
   primary: #6200ee,
-  secondary: #03dac6,
-  background: #ffffff,
-  colorless: #777777,
-  error: #b00020,
   on-primary: #ffffff,
+  /* Secondary */
+  secondary: #03dac6,
   on-secondary: #ffffff,
+  /* Text */
+  text: #686868,
+  on-text: #d3d3d3,
+  /* Background */
+  background: #fafafa,
   on-background: #526488,
-  on-colorless: #d3d3d3,
+  /* Error */
+  error: #b00020,
   on-error: #ffffff
 );
 

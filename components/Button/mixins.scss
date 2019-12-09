@@ -40,3 +40,12 @@
     }
   }
 }
+
+/**
+ * Sets all mixins
+ */
+@mixin button-styles($theme, $color) {
+  @include button-color($theme, $color);
+  @include button-outlined($theme, $color);
+  @include button-solid($theme, $color);
+}

@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.3] - 2019-12-09
+
+### Added
+
+- [Global Components](/plugins/global-components) plugin.
+
+### Changed
+
+- Components SCSS code refactoring.
+
 ## [0.0.2] - 2019-10-24
 
 ### Added

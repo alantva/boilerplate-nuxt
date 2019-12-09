@@ -49,45 +49,47 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+/* Default */
+span {
+  /** Basic style */
+  text-decoration: none;
+  transition: color 0.2s ease-in;
+}
+/* Color */
 @each $theme in $component-themes {
   .theme--#{$theme} {
     span {
-      /** Basic style */
-      text-decoration: none;
-      transition: color 0.2s ease-in;
-      /** Colorless style */
-      &:not(.label--primary, .label--secondary) {
-        color: t($theme, 'on-background');
-      }
+      /** Default style */
+      color: t($theme, 'text');
       /** Colered style */
       @each $color in $component-colors {
         &.label--#{$color} {
-          color: t($theme, 'on-background');
-        }
-      }
-
-      &.label {
-        &--title,
-        &--subtitle,
-        &--caption {
-          display: block;
-        }
-        &--title {
-          font-size: 2rem;
-          font-weight: 900;
-        }
-        &--subtitle {
-          font-size: 1.2rem;
-          font-weight: 900;
-        }
-        &--caption {
-          font-size: 0.8rem;
-        }
-        &--animated {
-          @include basicAnimation(fadeInUp, 0.5s);
+          color: t($theme, $color);
         }
       }
     }
+  }
+}
+/* Typography */
+.label {
+  &--title,
+  &--subtitle,
+  &--caption {
+    display: block;
+  }
+  &--title {
+    font-size: 2rem;
+    font-weight: 900;
+  }
+  &--subtitle {
+    font-size: 1.2rem;
+    font-weight: 900;
+  }
+  &--caption {
+    font-size: 0.8rem;
+  }
+  &--animated {
+    @include basicAnimation(fadeInUp, 0.5s);
   }
 }
 </style>
