@@ -6,7 +6,7 @@
     }"
   >
     <!-- @slot Use this slot to place the label content. -->
-    <slot name="default"></slot>
+    <slot></slot>
   </label>
 </template>
 

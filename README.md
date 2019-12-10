@@ -165,7 +165,7 @@ $ touch {ComponentName}.spec.js
 
 <template>
   <div>
-    <slot name="default"></slot>
+    <slot></slot>
   </div>
 </template>
 

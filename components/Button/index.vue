@@ -9,7 +9,7 @@
     @click="handleClick"
   >
     <!-- @slot Use this slot to place the button content. -->
-    <slot name="default"></slot>
+    <slot></slot>
   </button>
 </template>
 
