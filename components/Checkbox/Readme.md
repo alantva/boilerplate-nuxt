@@ -20,9 +20,9 @@ You can use this checkbox as in this example.
       </Label>
     </div>
     <div class="box">
-      <Checkbox id="check-3"></Checkbox>
+      <Checkbox id="check-3" disabled></Checkbox>
       <Label for="check-3" class="box" typography="caption">
-        Check this last option
+        And you can't check this last option
       </Label>
     </div>
   </div>

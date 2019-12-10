@@ -1,5 +1,5 @@
 <template>
-  <input type="text" :disabled="disabled" @input.prevent="handleInput" />
+  <input type="text" @input.prevent="handleInput" />
 </template>
 
 <script>
@@ -9,12 +9,6 @@ export default {
    * @displayName Input
    */
   name: 'Input',
-  props: {
-    /**
-     * Disable the input.
-     */
-    disabled: Boolean
-  },
   methods: {
     /**
      * Gets called when the user types on the input

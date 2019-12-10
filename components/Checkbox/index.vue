@@ -1,5 +1,5 @@
 <template>
-  <input type="checkbox" :disabled="disabled" @input.prevent="handleInput" />
+  <input type="checkbox" @input.prevent="handleInput" />
 </template>
 
 <script>
@@ -9,12 +9,6 @@ export default {
    * @displayName Checkbox
    */
   name: 'Checkbox',
-  props: {
-    /**
-     * Disable the checkbox.
-     */
-    disabled: Boolean
-  },
   methods: {
     /**
      * Gets called when the user check the input

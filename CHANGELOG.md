@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Components SCSS code improvement.
 - Components `<Label>` main wrapper from `<span>` to `<label>`.
+- Disabled prop scope in all components.
 
 ## [0.0.3] - 2019-12-09
 

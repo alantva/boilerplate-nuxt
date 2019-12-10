@@ -6,7 +6,6 @@
       'button--solid': solid,
       'button--outlined': outlined
     }"
-    :disabled="disabled"
     @click="handleClick"
   >
     <!-- @slot Use this slot to place the button content. -->
@@ -40,11 +39,7 @@ export default {
     /**
      * Sets the buttons inherit their borders from the current color applied.
      */
-    outlined: Boolean,
-    /**
-     * Disable the button.
-     */
-    disabled: Boolean
+    outlined: Boolean
   },
   methods: {
     /**
