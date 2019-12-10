@@ -16,7 +16,7 @@ describe('Checkbox', () => {
     test('have a HTML input what is selected', () => {
       const wrapper = mount(Radio, { propsData })
       wrapper.find('input').trigger('click')
-      expect(wrapper.emitted().input).toBeTruthy()
+      expect(wrapper.emitted().input[0][0]).toEqual(propsData.inputValue)
     })
     test('have a HTML input what is not selected when disabled', () => {
       const nPropsData = { ...propsData, disabled: true }

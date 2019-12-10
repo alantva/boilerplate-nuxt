@@ -16,13 +16,13 @@ describe('Checkbox', () => {
     test('have a HTML input what is checked', () => {
       const wrapper = mount(Checkbox, { propsData })
       wrapper.find('input').trigger('click')
-      expect(wrapper.emitted().input).toBeTruthy()
+      expect(wrapper.emitted().input[0][0]).toHaveLength(1)
     })
     test('have a HTML input what is unchecked', () => {
       const nPropsData = { ...propsData, value: ['check'] }
       const wrapper = mount(Checkbox, { propsData: nPropsData })
       wrapper.find('input').trigger('click')
-      expect(wrapper.emitted().input).toBeTruthy()
+      expect(wrapper.emitted().input[0][0]).toHaveLength(0)
     })
     test('have a HTML input what is not checked when disabled', () => {
       const nPropsData = { ...propsData, disabled: true }
