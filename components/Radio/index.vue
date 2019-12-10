@@ -1,6 +1,6 @@
 <template>
   <input
-    type="checkbox"
+    type="radio"
     :checked="isChecked"
     :value="inputValue"
     @input.prevent="handleInput"
@@ -10,29 +10,29 @@
 <script>
 export default {
   /**
-   * Checkbox component.
-   * @displayName Checkbox
+   * Radio component.
+   * @displayName Radio
    */
-  name: 'Checkbox',
+  name: 'Radio',
   props: {
     /**
-     * Input value.
+     * Sets the radio value.
      */
     inputValue: {
       type: [Number, String],
       required: true
     },
     /**
-     * Model value.
+     * Get the context value.
      */
     value: {
-      type: Array,
-      default: () => []
+      type: [Number, String],
+      default: null
     }
   },
   computed: {
     isChecked() {
-      return this.value.includes(this.inputValue)
+      return this.inputValue === this.value
     }
   },
   methods: {
@@ -40,26 +40,19 @@ export default {
      * Gets called when the user check the input
      */
     handleInput(e) {
-      const currentValue = this.value || []
-      const valueSet = new Set(currentValue)
-      if (e.target.checked) {
-        valueSet.add(e.target.value)
-      } else {
-        valueSet.delete(e.target.value)
-      }
       /**
        * Triggered when input is checked
        * @event input
        * @type {Event}
        */
-      return this.$emit('input', Array.from(valueSet))
+      return this.$emit('input', e.target.value)
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-input[type='checkbox'] {
+input[type='radio'] {
   /** Basic style */
   display: inline-block;
   vertical-align: middle;

@@ -8,12 +8,12 @@ You can use this input as in this example.
 <template>
   <div class="theme--light">
     <Label>Customers:</Label>
-    <Input v-model="value" fluid :disabled="check"></Input>
+    <Input v-model="value" fluid :disabled="isDisabled"></Input>
     <Label v-if="value" typography="caption">
       You are typing "{{ value }}"
     </Label>
     <br />
-    <Checkbox id="check" v-model="check"></Checkbox>
+    <Checkbox id="check" v-model="checkValues" input-value="isChecked" />
     <Label for="check" typography="caption">
       Check this option to block input
     </Label>
@@ -22,9 +22,14 @@ You can use this input as in this example.
 <script>
 export default {
 	data: () => ({
-    check: false,
+    checkValues: [],
     value: ''
-  })
+  }),
+  computed: {
+    isDisabled() {
+      return this.checkValues.includes('isChecked')
+    }
+  }
 }
 </script>
 ```
