@@ -32,7 +32,7 @@ export default {
   },
   computed: {
     isChecked() {
-      return this.value.includes(this.inputValue)
+      return this.value && this.value.includes(this.inputValue)
     }
   },
   methods: {
@@ -40,8 +40,7 @@ export default {
      * Gets called when the user check the input
      */
     handleInput(e) {
-      const currentValue = this.value || []
-      const valueSet = new Set(currentValue)
+      const valueSet = new Set(this.value)
       if (e.target.checked) {
         valueSet.add(e.target.value)
       } else {
