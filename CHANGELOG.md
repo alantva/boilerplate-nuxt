@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.4] - 2019-12-10
+
+### Added
+
+- [`<Checkbox>`](/components/Checkbox) component.
+
+### Changed
+
+- Components SCSS code improvement.
+- Components `<Label>` main wrapper from `<span>` to `<label>`.
+
 ## [0.0.3] - 2019-12-09
 
 ### Added

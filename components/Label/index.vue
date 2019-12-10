@@ -1,5 +1,5 @@
 <template>
-  <span
+  <label
     :class="{
       [`label--${color}`]: !!color,
       [`label--${typography}`]: !!typography
@@ -7,7 +7,7 @@
   >
     <!-- @slot Use this slot to place the label content. -->
     <slot name="default"></slot>
-  </span>
+  </label>
 </template>
 
 <script>
@@ -44,17 +44,22 @@ export default {
 
 <style lang="scss" scoped>
 /* Default */
-span {
+label {
   /** Basic style */
-  display: block;
+  display: inline-block;
   text-decoration: none;
   transition: color 0.2s ease-in;
   @include basicAnimation(fadeInUp, 0.5s);
+
+  &[for] {
+    cursor: pointer;
+    user-select: none;
+  }
 }
 /* Color */
 @each $theme in $component-themes {
   .theme--#{$theme} {
-    span {
+    label {
       /** Default style */
       color: t($theme, 'text');
       /** Colered style */

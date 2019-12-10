@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div>
+    <div class="wrapper">
       <Label typography="title">Boilerplate Nuxt</Label>
       <Label>{{ description }}</Label>
       <Label typography="caption">v{{ version }}</Label>
@@ -9,7 +9,7 @@
           Documentation
         </Button>
         <Button solid color="secondary" @click="handleGithub">GitHub</Button>
-        <Button solid @click="handleChangelog">
+        <Button solid color="error" @click="handleChangelog">
           Changelog
         </Button>
       </div>
@@ -52,6 +52,11 @@ export default {
   text-align: center;
   padding-left: 15px;
   padding-right: 15px;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .links {

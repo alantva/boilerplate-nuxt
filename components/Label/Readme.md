@@ -21,7 +21,9 @@ This label is amazing, use it responsibly.
 ```jsx
 <div class="theme--light">
   <Label color="primary" typography="title">Title</Label>
+  <br />
   <Label color="primary" typography="subtitle">Subtitle</Label>
+  <br />
   <Label color="primary" typography="caption">Caption</Label>
 </div>
 ```
@@ -35,10 +37,12 @@ You can use this label as in this example.
   <div class="theme--light">
     <div class="wrapper">
       <Label typography="title">{{ title }}</Label>
+      <br />
       <Label typography="caption">{{ caption }}</Label>
     </div>
     <div class="wrapper">
       <Label typography="subtitle">{{ subtitle }}</Label>
+      <br />
       <Label>{{ text }}</Label>
     </div>
   </div>
