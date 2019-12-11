@@ -18,7 +18,7 @@
 </template>
 
 <script>
-const myRepo = process.env.repository_url
+const repoUrl = process.env.repositoryUrl
 
 export default {
   data: () => ({
@@ -27,13 +27,13 @@ export default {
   }),
   methods: {
     handleDocumentation() {
-      return this.windowOpen(myRepo + '#introduction')
+      return this.windowOpen(repoUrl + '#introduction')
     },
     handleGithub() {
-      return this.windowOpen(myRepo)
+      return this.windowOpen(repoUrl)
     },
     handleChangelog() {
-      return this.windowOpen(myRepo + '/blob/master/CHANGELOG.md#changelog')
+      return this.windowOpen(repoUrl + '/blob/master/CHANGELOG.md#changelog')
     },
     windowOpen(url) {
       return window.open(url, '_blank')

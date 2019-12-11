@@ -31,7 +31,7 @@ input[type='text'] {
   display: inline-block;
   border-radius: 4px;
   text-decoration: none;
-  padding: 10px 10px;
+  padding: 10px;
   transition: background-color 0.2s ease-in;
   outline: none;
   user-select: none;

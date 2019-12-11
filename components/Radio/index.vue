@@ -16,14 +16,14 @@ export default {
   name: 'Radio',
   props: {
     /**
-     * Sets the radio value.
+     * Input value.
      */
     inputValue: {
       type: [Number, String],
       required: true
     },
     /**
-     * Get the context value.
+     * Model value.
      */
     value: {
       type: [Number, String],

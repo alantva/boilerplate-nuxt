@@ -32,4 +32,28 @@ describe('Validators', () => {
       })
     })
   })
+
+  const trueSelectOptions = [
+    [{ value: 1, text: "It's a test!" }],
+    [{ value: 1, text: "It's a test!" }, { value: 2, text: "It's a test too!" }]
+  ]
+  const falseSelectOptions = [
+    [{ id: 1, text: "It's a test!" }],
+    [{ value: 1, description: "It's a test!" }],
+    [{ value: 1 }],
+    [{ text: "It's a test!" }]
+  ]
+
+  describe('SelectOption', () => {
+    trueSelectOptions.forEach((selectOption) => {
+      test(`"${selectOption}" must be truthy`, () => {
+        expect(Validators.selectOptions(selectOption)).toBeTruthy()
+      })
+    })
+    falseSelectOptions.forEach((selectOption) => {
+      test(`"${selectOption}" must be falsy`, () => {
+        expect(Validators.selectOptions(selectOption)).toBeFalsy()
+      })
+    })
+  })
 })
