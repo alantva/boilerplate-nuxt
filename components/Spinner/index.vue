@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import Validator from '../../utils/components/validators'
+
 export default {
   name: 'Spinner',
   props: {
@@ -12,12 +14,13 @@ export default {
      */
     size: {
       type: String,
-      default: 'md'
+      default: 'md',
+      validator: Validator.sizes
     }
   },
   computed: {
     getClass() {
-      return { [this.size]: true }
+      return { [`spinner--${this.size}`]: true }
     }
   }
 }
@@ -42,7 +45,7 @@ $base-spinner-multiplier: (
   @each $size in $component-sizes {
     $multiplier: map-get($base-spinner-multiplier, $size);
 
-    &.#{$size} {
+    &.spinner--#{$size} {
       width: $base-spinner-size * $multiplier;
       height: $base-spinner-size * $multiplier;
       &:after {

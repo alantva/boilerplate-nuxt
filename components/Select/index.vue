@@ -1,8 +1,8 @@
 <template>
-  <div class="wrapper">
+  <div class="select--wrapper">
     <select
       v-bind="$attrs"
-      @input.prevent="handleInput"
+      @change.prevent="handleChange"
       @focus="active = true"
       @blur="active = false"
       @mouseleave="$event.target.blur()"
@@ -12,8 +12,10 @@
         {{ option.text }}
       </option>
     </select>
-    <Spinner v-if="loading" class="arrow" size="xs"></Spinner>
-    <span v-else :class="{ active }" class="arrow">&#9660;</span>
+    <Spinner v-if="loading" class="select--spinner" size="xs"></Spinner>
+    <span v-else :class="{ 'select--active': active }" class="select--arrow">
+      &#9660;
+    </span>
   </div>
 </template>
 
@@ -58,7 +60,7 @@ export default {
     /**
      * Gets called when the user changes the selected option
      */
-    handleInput(e) {
+    handleChange(e) {
       /**
        * Triggered when select is changed
        * @event input
@@ -71,7 +73,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
+.select--wrapper {
   position: relative;
   display: inline-block;
   width: 100%;
@@ -94,7 +96,8 @@ export default {
     border-width: 1px;
     border-style: solid;
   }
-  .arrow {
+  .select--arrow,
+  .select--spinner {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -105,22 +108,25 @@ export default {
     position: absolute;
     user-select: none;
     transition: transform 0.2s ease-in;
-    &.active {
+    &.select--active {
       transform: rotate(180deg);
     }
   }
 }
 @each $theme in $component-themes {
   .theme--#{$theme} {
-    .arrow {
-      color: t($theme, 'text');
-    }
-    select {
-      &:not(:disabled) {
-        color: t($theme, 'on-background');
-        background-color: t($theme, 'background');
-        border-color: t($theme, 'text');
+    .select--wrapper {
+      select {
+        &:not(:disabled) {
+          color: t($theme, 'on-background');
+          background-color: t($theme, 'background');
+          border-color: t($theme, 'text');
+        }
       }
+    }
+    .select--arrow,
+    .select--spinner {
+      color: t($theme, 'text');
     }
   }
 }

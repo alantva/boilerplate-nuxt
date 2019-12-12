@@ -1,9 +1,9 @@
 import Validators from './validators'
 
 describe('Validators', () => {
+  /** Colors */
   const trueColors = ['primary', 'secondary', 'error']
   const falseColors = ['not-primary', 'not-secondary', 'not-error']
-
   describe('Colors', () => {
     trueColors.forEach((color) => {
       test(`"${color}" must be truthy`, () => {
@@ -16,23 +16,7 @@ describe('Validators', () => {
       })
     })
   })
-
-  const trueTypography = ['title', 'subtitle', 'caption']
-  const falseTypography = ['not-title', 'not-subtitle', 'not-caption']
-
-  describe('Typography', () => {
-    trueTypography.forEach((typography) => {
-      test(`"${typography}" must be truthy`, () => {
-        expect(Validators.typography(typography)).toBeTruthy()
-      })
-    })
-    falseTypography.forEach((typography) => {
-      test(`"${typography}" must be falsy`, () => {
-        expect(Validators.typography(typography)).toBeFalsy()
-      })
-    })
-  })
-
+  /** SelectOptions */
   const trueSelectOptions = [
     [{ value: 1, text: "It's a test!" }],
     [{ value: 1, text: "It's a test!" }, { value: 2, text: "It's a test too!" }]
@@ -43,16 +27,45 @@ describe('Validators', () => {
     [{ value: 1 }],
     [{ text: "It's a test!" }]
   ]
-
-  describe('SelectOption', () => {
+  describe('SelectOptions', () => {
     trueSelectOptions.forEach((selectOption) => {
-      test(`"${selectOption}" must be truthy`, () => {
+      test(`The array ${JSON.stringify(selectOption)} must be truthy`, () => {
         expect(Validators.selectOptions(selectOption)).toBeTruthy()
       })
     })
     falseSelectOptions.forEach((selectOption) => {
-      test(`"${selectOption}" must be falsy`, () => {
+      test(`The array ${JSON.stringify(selectOption)} must be falsy`, () => {
         expect(Validators.selectOptions(selectOption)).toBeFalsy()
+      })
+    })
+  })
+  /** Sizes */
+  const trueSizes = ['xs', 'sm', 'md', 'lg', 'xl']
+  const falseSizes = ['not-xs', 'not-sm', 'not-md', 'not-lg', 'not-xl']
+  describe('Sizes', () => {
+    trueSizes.forEach((size) => {
+      test(`"${size}" must be truthy`, () => {
+        expect(Validators.sizes(size)).toBeTruthy()
+      })
+    })
+    falseSizes.forEach((size) => {
+      test(`"${size}" must be falsy`, () => {
+        expect(Validators.sizes(size)).toBeFalsy()
+      })
+    })
+  })
+  /** Typography */
+  const trueTypography = ['title', 'subtitle', 'caption']
+  const falseTypography = ['not-title', 'not-subtitle', 'not-caption']
+  describe('Typography', () => {
+    trueTypography.forEach((typography) => {
+      test(`"${typography}" must be truthy`, () => {
+        expect(Validators.typography(typography)).toBeTruthy()
+      })
+    })
+    falseTypography.forEach((typography) => {
+      test(`"${typography}" must be falsy`, () => {
+        expect(Validators.typography(typography)).toBeFalsy()
       })
     })
   })

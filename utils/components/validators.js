@@ -1,10 +1,12 @@
-const colors = (value) => ['primary', 'secondary', 'error'].includes(value)
+export default {
+  colors: (value) => ['primary', 'secondary', 'error'].includes(value),
 
-const typography = (value) => ['title', 'subtitle', 'caption'].includes(value)
+  selectOptions: (items) =>
+    items.filter(
+      (item) => item.hasOwnProperty('value') && item.hasOwnProperty('text')
+    ).length === items.length,
 
-const selectOptions = (items) =>
-  items.filter(
-    (item) => item.hasOwnProperty('value') && item.hasOwnProperty('text')
-  ).length === items.length
+  sizes: (value) => ['xs', 'sm', 'md', 'lg', 'xl'].includes(value),
 
-export default { colors, typography, selectOptions }
+  typography: (value) => ['title', 'subtitle', 'caption'].includes(value)
+}

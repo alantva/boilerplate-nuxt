@@ -23,8 +23,8 @@
     "lint:scss:fix": "yarn lint:scss -- --fix",
     "styleguide": "vue-styleguidist server",
     "styleguide:build": "vue-styleguidist build",
-    "test": "jest",
-    "test:watch": "jest --watchAll --verbose"
+    "test": "jest --no-cache",
+    "test:watch": "jest --watchAll --verbose --no-cache"
   },
   "lint-staged": {
     "*.{js,vue}": [
