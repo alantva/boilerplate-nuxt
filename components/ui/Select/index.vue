@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import Validators from '../../utils/components/validators'
+import Validators from '../../../utils/components/validators'
 
 export default {
   /**

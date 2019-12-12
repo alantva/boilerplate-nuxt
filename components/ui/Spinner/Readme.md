@@ -14,13 +14,22 @@ This spinner is amazing, use it responsibly.
 </div>
 ```
 
+<strong>Color</strong>
+
 ```jsx
-<div class="theme--dark">
-  <Spinner size="xs"></Spinner>
-  <Spinner size="sm"></Spinner>
-  <Spinner></Spinner>
-  <Spinner size="lg"></Spinner>
-  <Spinner size="xl"></Spinner>
+<div>
+  <div class="theme--dark">
+    <Spinner></Spinner>
+    <Spinner color="primary"></Spinner>
+    <Spinner color="secondary"></Spinner>
+    <Spinner color="error"></Spinner>
+  </div>
+  <div class="theme--light">
+    <Spinner></Spinner>
+    <Spinner color="primary"></Spinner>
+    <Spinner color="secondary"></Spinner>
+    <Spinner color="error"></Spinner>
+  </div>
 </div>
 ```
 

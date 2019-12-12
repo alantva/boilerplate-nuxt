@@ -11,14 +11,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- [`<Spinner>`](/components/Spinner) component.
-- [`<Select>`](/components/Select) component.
+- [`<Spinner>`](/components/ui/Spinner) component.
+- [`<Select>`](/components/ui/Select) component.
+
+### Changed
+
+- Moved components to `components/ui` folder.
+- All changelog components links.
 
 ## [0.0.4] - 2019-12-10
 
 ### Added
 
-- [`<Checkbox>`](/components/Checkbox) component.
+- [`<Checkbox>`](/components/ui/Checkbox) component.
 
 ### Changed
 
@@ -31,7 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - [Global Components](/plugins/global-components) plugin.
-- [`<Input>`](/components/Input) component.
+- [`<Input>`](/components/ui/Input) component.
 
 ### Changed
 
@@ -60,8 +65,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Jest](https://jestjs.io) configuration.
 - [Husky](https://github.com/typicode/husky) configuration.
 - Theme configuration.
-- [`<Button>`](/components/Button) component.
-- [`<Label>`](/components/Label) component.
+- [`<Button>`](/components/ui/Button) component.
+- [`<Label>`](/components/ui/Label) component.
 - Readme.
 - Changelog.
 

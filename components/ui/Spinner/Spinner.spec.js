@@ -37,6 +37,21 @@ describe('Spinner', () => {
         const classes = wrapper.find('.spinner').classes()
         expect(classes).toContain('spinner--xl')
       })
+      test('has class "spinner--primary"', () => {
+        const wrapper = mount(Spinner, { propsData: { color: 'primary' } })
+        const classes = wrapper.find('.spinner').classes()
+        expect(classes).toContain('spinner--primary')
+      })
+      test('has class "spinner--secondary"', () => {
+        const wrapper = mount(Spinner, { propsData: { color: 'secondary' } })
+        const classes = wrapper.find('.spinner').classes()
+        expect(classes).toContain('spinner--secondary')
+      })
+      test('has class "spinner--error"', () => {
+        const wrapper = mount(Spinner, { propsData: { color: 'error' } })
+        const classes = wrapper.find('.spinner').classes()
+        expect(classes).toContain('spinner--error')
+      })
     })
   })
 })

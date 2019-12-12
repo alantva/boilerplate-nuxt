@@ -1,26 +1,38 @@
 <template>
-  <div class="spinner" :class="getClass"></div>
+  <div class="spinner" :class="getClasses"></div>
 </template>
 
 <script>
-import Validator from '../../utils/components/validators'
+import Validators from '../../../utils/components/validators'
 
 export default {
   name: 'Spinner',
   props: {
     /**
-     * Size.
+     * Sets the spinner color.
+     * `(primary|secondary|error)`
+     */
+    color: {
+      type: String,
+      default: null,
+      validator: Validators.colors
+    },
+    /**
+     * Sets the spinner size.
      * (xs|sm|md|lg|xl)
      */
     size: {
       type: String,
       default: 'md',
-      validator: Validator.sizes
+      validator: Validators.sizes
     }
   },
   computed: {
-    getClass() {
-      return { [`spinner--${this.size}`]: true }
+    getClasses() {
+      return {
+        [`spinner--${this.size}`]: true,
+        ...(this.color ? { [`spinner--${this.color}`]: true } : null)
+      }
     }
   }
 }
@@ -64,9 +76,17 @@ $base-spinner-multiplier: (
 }
 @each $theme in $component-themes {
   .theme--#{$theme} {
+    /** Default style */
     .spinner:after {
       $color: t($theme, 'text');
       border-color: $color transparent $color transparent;
+    }
+    /** Colered style */
+    @each $color in $component-colors {
+      .spinner--#{$color}:after {
+        $border-color: t($theme, $color);
+        border-color: $border-color transparent $border-color transparent;
+      }
     }
   }
 }
