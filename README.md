@@ -74,12 +74,12 @@ $dark-theme: (
   primary: #bb86fc,
   secondary: #03dac6,
   background: #121212,
-  colorless: #777777,
+  text: #777777,
   error: #cf6679,
   on-primary: #000000,
   on-secondary: #000000,
   on-background: #ffffff,
-  on-colorless: #d3d3d3,
+  on-text: #d3d3d3,
   on-error: #000000
 );
 ```
@@ -89,12 +89,12 @@ $light-theme: (
   primary: #6200ee,
   secondary: #03dac6,
   background: #ffffff,
-  colorless: #777777,
+  text: #777777,
   error: #b00020,
   on-primary: #ffffff,
   on-secondary: #ffffff,
   on-background: #526488,
-  on-colorless: #d3d3d3,
+  on-text: #d3d3d3,
   on-error: #ffffff
 );
 ```
@@ -112,12 +112,12 @@ And add all the properties:
 - `primary`: _main color for the application._
 - `secondary`: _secondary color for the application._
 - `background`: _background color for the application._
-- `colorless`: _default color for components._
+- `text`: _text color for components._
 - `error`: _error color for the application._
 - `on-primary`: _main reverse color for the application._
 - `on-secondary`: _secondary reverse color for the application._
 - `on-background`: _background reverse color for the application._
-- `on-colorless`: _default reverse color for components._
+- `on-text`: _text reverse color for components._
 - `on-error`: _error reverse color for the application._
 
 In the array:
@@ -133,8 +133,15 @@ This control is currently located in the file: [layouts/default.vue](/layouts/de
 
 # Components
 
-- [Button](/components/Button)
-- [Label](/components/Label)
+## UI
+
+- [Button](/components/ui/Button)
+- [Checkbox](/components/ui/Checkbox)
+- [Input](/components/ui/Input)
+- [Label](/components/ui/Label)
+- [Radio](/components/ui/Radio)
+- [Select](/components/ui/Select)
+- [Spinner](/components/ui/Spinner)
 
 ## How to create a component?
 
