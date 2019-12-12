@@ -1,13 +1,5 @@
 <template>
-  <button
-    type="button"
-    :class="{
-      [`button--${color}`]: !!color,
-      'button--solid': solid,
-      'button--outlined': outlined
-    }"
-    @click="handleClick"
-  >
+  <button type="button" :class="getClasses" @click="handleClick">
     <!-- @slot Use this slot to place the button content. -->
     <slot></slot>
   </button>
@@ -35,11 +27,26 @@ export default {
     /**
      * Sets the buttons inherit their colors from the current color applied.
      */
-    solid: Boolean,
+    solid: {
+      type: Boolean,
+      default: false
+    },
     /**
      * Sets the buttons inherit their borders from the current color applied.
      */
-    outlined: Boolean
+    outlined: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    getClasses() {
+      return {
+        [`button--${this.color}`]: !!this.color,
+        'button--solid': this.solid,
+        'button--outlined': this.outlined
+      }
+    }
   },
   methods: {
     /**

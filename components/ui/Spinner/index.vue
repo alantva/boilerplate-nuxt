@@ -19,7 +19,7 @@ export default {
     },
     /**
      * Sets the spinner size.
-     * (xs|sm|md|lg|xl)
+     * (xs | sm | md | lg | xl)
      */
     size: {
       type: String,
@@ -54,7 +54,6 @@ $base-spinner-multiplier: (
 
 .spinner {
   display: inline-block;
-  @include basicAnimation(fadeInUp, 0.5s);
   @each $size in $component-sizes {
     $multiplier: map-get($base-spinner-multiplier, $size);
 
