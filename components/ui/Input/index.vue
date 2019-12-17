@@ -9,6 +9,16 @@ export default {
    * @displayName Input
    */
   name: 'Input',
+  props: {
+    /**
+     * Model value.
+     * @model
+     */
+    value: {
+      type: String,
+      default: null
+    }
+  },
   methods: {
     /**
      * Is called when the user types on the input.

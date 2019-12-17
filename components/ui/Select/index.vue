@@ -2,7 +2,7 @@
   <div class="select--wrapper">
     <select
       v-bind="$attrs"
-      @change.prevent="handleChange"
+      @change.prevent="handleInput"
       @focus="active = true"
       @blur="active = false"
       @mouseleave="$event.target.blur()"
@@ -29,6 +29,14 @@ export default {
    */
   name: 'Select',
   props: {
+    /**
+     * Model value.
+     * @model
+     */
+    value: {
+      type: [Number, String],
+      default: null
+    },
     /**
      * Options.
      * `[{ value, text }]`
@@ -62,7 +70,7 @@ export default {
      * @param {Event} event
      * @public
      */
-    handleChange(event) {
+    handleInput(event) {
       /**
        * Triggered when select is changed.
        * @event input
