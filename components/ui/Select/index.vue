@@ -31,7 +31,7 @@ export default {
   props: {
     /**
      * Options.
-     * [{ value, text }]
+     * `[{ value, text }]`
      */
     options: {
       type: Array,
@@ -58,15 +58,17 @@ export default {
   }),
   methods: {
     /**
-     * Gets called when the user changes the selected option
+     * Gets called when the user change the selected option.
+     * @param {Event} event
+     * @public
      */
-    handleChange(e) {
+    handleChange(event) {
       /**
-       * Triggered when select is changed
+       * Triggered when select is changed.
        * @event input
-       * @type {Event}
+       * @type {String}
        */
-      return this.$emit('input', e.target.value)
+      return this.$emit('input', event.target.value)
     }
   }
 }

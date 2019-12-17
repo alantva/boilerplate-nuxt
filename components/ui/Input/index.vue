@@ -11,15 +11,17 @@ export default {
   name: 'Input',
   methods: {
     /**
-     * Gets called when the user types on the input
+     * Is called when the user types on the input.
+     * @param {Event} event
+     * @public
      */
-    handleInput(e) {
+    handleInput(event) {
       /**
        * Triggered when input is typed
        * @event input
-       * @type {Event}
+       * @type {Boolean}
        */
-      return this.$emit('input', e.target.value)
+      return this.$emit('input', event.target.value)
     }
   }
 }

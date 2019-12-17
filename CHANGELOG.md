@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.6] - 2019-12-17
+
+### Added
+
+- [`<AppTheme>`](/components/layout/AppTheme) component.
+
+### Changed
+
+- Documentation in all components.
+- [Default](/layouts/default) layout.
+
 ## [0.0.5] - 2019-12-12
 
 ### Added

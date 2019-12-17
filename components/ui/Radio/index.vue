@@ -24,6 +24,7 @@ export default {
     },
     /**
      * Model value.
+     * @model
      */
     value: {
       type: [Number, String],
@@ -31,21 +32,26 @@ export default {
     }
   },
   computed: {
+    /**
+     * Validates if the radio is active.
+     */
     isChecked() {
       return this.inputValue === this.value
     }
   },
   methods: {
     /**
-     * Gets called when the user check the input
+     * Is called when the user change the input.
+     * @param {Event} event
+     * @public
      */
-    handleInput(e) {
+    handleInput(event) {
       /**
-       * Triggered when input is checked
+       * Triggered when input is changed.
        * @event input
-       * @type {Event}
+       * @type {Boolean}
        */
-      return this.$emit('input', e.target.value)
+      return this.$emit('input', event.target.value)
     }
   }
 }

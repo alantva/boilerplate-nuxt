@@ -1,5 +1,5 @@
 <template>
-  <div class="spinner" :class="getClasses"></div>
+  <div class="spinner" :class="getSpinnerClass"></div>
 </template>
 
 <script>
@@ -19,7 +19,7 @@ export default {
     },
     /**
      * Sets the spinner size.
-     * (xs | sm | md | lg | xl)
+     * `(xs|sm|md|lg|xl)`
      */
     size: {
       type: String,
@@ -28,7 +28,10 @@ export default {
     }
   },
   computed: {
-    getClasses() {
+    /**
+     * Returns the classes the spinner should receive.
+     */
+    getSpinnerClass() {
       return {
         [`spinner--${this.size}`]: true,
         ...(this.color ? { [`spinner--${this.color}`]: true } : null)

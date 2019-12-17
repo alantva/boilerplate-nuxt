@@ -24,6 +24,7 @@ export default {
     },
     /**
      * Model value.
+     * @model
      */
     value: {
       type: Array,
@@ -31,25 +32,30 @@ export default {
     }
   },
   computed: {
+    /**
+     * Validates if the checkbox is active.
+     */
     isChecked() {
       return this.value && this.value.includes(this.inputValue)
     }
   },
   methods: {
     /**
-     * Gets called when the user check the input
+     * Is called when the user change the input.
+     * @param {Event} event
+     * @public
      */
-    handleInput(e) {
+    handleInput(event) {
       const valueSet = new Set(this.value)
-      if (e.target.checked) {
-        valueSet.add(e.target.value)
+      if (event.target.checked) {
+        valueSet.add(event.target.value)
       } else {
-        valueSet.delete(e.target.value)
+        valueSet.delete(event.target.value)
       }
       /**
-       * Triggered when input is checked
+       * Triggered when input is changed.
        * @event input
-       * @type {Event}
+       * @type {Array}
        */
       return this.$emit('input', Array.from(valueSet))
     }

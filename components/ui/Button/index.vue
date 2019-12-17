@@ -1,5 +1,5 @@
 <template>
-  <button type="button" :class="getClasses" @click="handleClick">
+  <button type="button" :class="getButtonClass" @click="handleClick">
     <!-- @slot Use this slot to place the button content. -->
     <slot></slot>
   </button>
@@ -40,7 +40,10 @@ export default {
     }
   },
   computed: {
-    getClasses() {
+    /**
+     * Returns the classes the button should receive.
+     */
+    getButtonClass() {
       return {
         [`button--${this.color}`]: !!this.color,
         'button--solid': this.solid,
@@ -50,15 +53,17 @@ export default {
   },
   methods: {
     /**
-     * Gets called when the user clicks on the button
+     * Gets called when the user clicks on the button.
+     * @param {Event} event
+     * @public
      */
-    handleClick(e) {
+    handleClick(event) {
       /**
-       * Triggered when button is clicked
+       * Triggered when button is clicked.
        * @event click
        * @type {Event}
        */
-      this.$emit('click', e)
+      this.$emit('click', event)
     }
   }
 }

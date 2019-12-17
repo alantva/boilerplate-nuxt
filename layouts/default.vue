@@ -1,29 +1,25 @@
 <template>
-  <div :class="theme">
-    <div class="themes-links">
-      <Button color="primary" @click="theme = 'theme--dark'">
-        Dark
-      </Button>
-      <Button color="secondary" @click="theme = 'theme--light'">
-        Light
-      </Button>
-    </div>
+  <div :class="getThemeClass">
+    <AppTheme v-model="theme"></AppTheme>
     <nuxt />
   </div>
 </template>
 
 <script>
+import AppTheme from '@/components/layout/AppTheme'
+
 export default {
-  data: () => ({ theme: 'theme--dark' })
+  components: { AppTheme },
+  data: () => ({ theme: 'dark' }),
+  computed: {
+    getThemeClass() {
+      return { [`theme--${this.theme}`]: true }
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-.themes-links {
-  position: absolute;
-  margin: 15px;
-}
-
 @each $theme in $component-themes {
   .theme--#{$theme} {
     background-color: t($theme, 'background');
