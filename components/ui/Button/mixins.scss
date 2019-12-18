@@ -2,9 +2,9 @@
  * Sets the buttons inherit their base colors from the current color applied.
  */
 @mixin button-color($theme, $color) {
-  border-color: t($theme, 'on-' + $color);
+  border-color: transparent;
   color: t($theme, $color);
-  background-color: t($theme, 'on-' + $color);
+  background-color: transparent;
   &:hover,
   &:active {
     color: t($theme, 'on-' + $color);

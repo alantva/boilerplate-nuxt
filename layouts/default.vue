@@ -27,8 +27,26 @@ export default {
 <style lang="scss" scoped>
 @each $theme in $component-themes {
   .theme--#{$theme} {
-    background-color: t($theme, 'background');
+    $backgroundColor: t($theme, 'background');
     color: t($theme, 'text');
+
+    @if $theme == 'dark' {
+      background: linear-gradient(
+        -45deg,
+        lighten($backgroundColor, 10%),
+        lighten($backgroundColor, 30%),
+        lighten($backgroundColor, 20%),
+        lighten($backgroundColor, 40%)
+      );
+    } @else if $theme == 'light' {
+      background: linear-gradient(
+        -45deg,
+        darken($backgroundColor, 10%),
+        darken($backgroundColor, 20%),
+        darken($backgroundColor, 15%),
+        darken($backgroundColor, 25%)
+      );
+    }
   }
 }
 </style>

@@ -5,11 +5,11 @@
       <Label>{{ description }}</Label>
       <Label typography="caption">v{{ version }}</Label>
       <div class="links">
-        <Button outlined color="primary" @click="handleDocumentation">
+        <Button solid color="primary" @click="handleDocumentation">
           Documentation
         </Button>
-        <Button outlined color="secondary" @click="handleGithub">GitHub</Button>
-        <Button outlined color="error" @click="handleChangelog">
+        <Button solid color="secondary" @click="handleGithub">GitHub</Button>
+        <Button solid color="error" @click="handleChangelog">
           Changelog
         </Button>
       </div>
