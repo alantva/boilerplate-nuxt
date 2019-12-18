@@ -1,25 +1,26 @@
 <template>
   <div>
-    <div v-for="(firefly, i) in getFireflies" :key="i" class="firefly"></div>
+    <div v-for="(ff, i) in Array(10)" :key="i" class="firefly"></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'AppFireflies',
-  computed: {
-    getFireflies() {
-      return Array(50)
-    }
-  }
+  /**
+   * AppFireflies component.
+   * @displayName AppFireflies
+   */
+  name: 'AppFireflies'
 }
 </script>
 
 <style lang="scss" scoped>
-$quantity: 50;
+$quantity: 10;
+$glow-color: white;
 
 .firefly {
   position: fixed;
+  opacity: 0.5;
   left: 50%;
   top: 50%;
   width: 0.4vw;
@@ -44,7 +45,7 @@ $quantity: 50;
   &::after {
     background: white;
     opacity: 0;
-    box-shadow: 0 0 0vw 0vw yellow;
+    box-shadow: 0 0 0vw 0vw $glow-color;
     animation: drift ease alternate infinite, flash ease infinite;
   }
 }
@@ -87,11 +88,11 @@ $quantity: 50;
   30%,
   100% {
     opacity: 0;
-    box-shadow: 0 0 0vw 0vw yellow;
+    box-shadow: 0 0 0vw 0vw $glow-color;
   }
   5% {
     opacity: 1;
-    box-shadow: 0 0 2vw 0.4vw yellow;
+    box-shadow: 0 0 2vw 0.4vw $glow-color;
   }
 }
 </style>

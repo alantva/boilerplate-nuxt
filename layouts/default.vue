@@ -1,7 +1,7 @@
 <template>
   <div :class="getThemeClass">
     <AppTheme v-model="theme"></AppTheme>
-    <AppFireflies v-if="isThemeDark"></AppFireflies>
+    <AppFireflies></AppFireflies>
     <nuxt />
   </div>
 </template>
