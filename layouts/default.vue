@@ -12,11 +12,10 @@ import AppFireflies from '@/components/layout/AppFireflies'
 
 export default {
   components: { AppFireflies, AppTheme },
-  data: () => ({ theme: 'dark' }),
+  data: () => ({
+    theme: 'dark'
+  }),
   computed: {
-    isThemeDark() {
-      return this.theme === 'dark'
-    },
     getThemeClass() {
       return { [`theme--${this.theme}`]: true }
     }
