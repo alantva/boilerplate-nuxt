@@ -1,7 +1,7 @@
 {
   "name": "boilerplate-nuxt",
-  "version": "0.0.6",
-  "description": "My pioneering Nuxt.js project",
+  "version": "0.0.7",
+  "description": "My Nuxt.js project",
   "author": "Alan Timossi Farias de Oliveira",
   "repository": {
     "type" : "git",
