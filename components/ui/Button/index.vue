@@ -25,18 +25,12 @@ export default {
       validator: Validators.colors
     },
     /**
-     * Sets the buttons inherit their colors from the current color applied.
+     *
      */
-    solid: {
-      type: Boolean,
-      default: false
-    },
-    /**
-     * Sets the buttons inherit their borders from the current color applied.
-     */
-    outlined: {
-      type: Boolean,
-      default: false
+    buttonDesign: {
+      type: String,
+      default: null,
+      validator: Validators.buttonDesign
     }
   },
   computed: {
@@ -46,8 +40,7 @@ export default {
     getButtonClass() {
       return {
         [`button--${this.color}`]: !!this.color,
-        'button--solid': this.solid,
-        'button--outlined': this.outlined
+        [`button--${this.buttonDesign}`]: !!this.buttonDesign
       }
     }
   },
@@ -98,11 +91,11 @@ button {
   .theme--#{$theme} {
     button:not(:disabled) {
       /** Default style */
-      @include button-styles($theme, 'text');
+      @include button-design($theme, 'text');
       /** Colered style */
       @each $color in $component-colors {
         &.button--#{$color} {
-          @include button-styles($theme, $color);
+          @include button-design($theme, $color);
         }
       }
     }

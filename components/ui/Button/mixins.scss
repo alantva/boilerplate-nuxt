@@ -35,8 +35,8 @@
     background-color: t($theme, $color);
     &:hover,
     &:active {
-      color: t($theme, $color);
-      background-color: t($theme, 'on-' + $color);
+      border-color: t($theme, 'on-' + $color);
+      box-shadow: 1px 1px 0 inset t($theme, $color);
     }
   }
 }
@@ -44,7 +44,7 @@
 /**
  * Sets all mixins
  */
-@mixin button-styles($theme, $color) {
+@mixin button-design($theme, $color) {
   @include button-color($theme, $color);
   @include button-outlined($theme, $color);
   @include button-solid($theme, $color);

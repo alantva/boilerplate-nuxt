@@ -1,4 +1,6 @@
 export default {
+  buttonDesign: (value) => ['solid', 'outlined'].includes(value),
+
   colors: (value) => ['primary', 'secondary', 'error'].includes(value),
 
   selectOptions: (items) =>

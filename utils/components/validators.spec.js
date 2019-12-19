@@ -1,6 +1,21 @@
 import Validators from './validators'
 
 describe('Validators', () => {
+  /** ButtonDesign */
+  const trueButtonDesign = ['solid', 'outlined']
+  const falseButtonDesign = ['not-solid', 'not-outlined']
+  describe('ButtonDesign', () => {
+    trueButtonDesign.forEach((design) => {
+      test(`"${design}" must be truthy`, () => {
+        expect(Validators.buttonDesign(design)).toBeTruthy()
+      })
+    })
+    falseButtonDesign.forEach((design) => {
+      test(`"${design}" must be falsy`, () => {
+        expect(Validators.buttonDesign(design)).toBeFalsy()
+      })
+    })
+  })
   /** Colors */
   const trueColors = ['primary', 'secondary', 'error']
   const falseColors = ['not-primary', 'not-secondary', 'not-error']

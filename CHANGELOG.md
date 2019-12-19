@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.7] - 2019-12-19
+
+### Added
+
+- [`<AppFireflies>`](/components/layout/AppFireflies) component.
+- [`<Box>`](/components/ui/Box) component.
+
+### Changed
+
+- [`<Button>`](/components/ui/Button) component.
+- [Index](/pages) page.
+
 ## [0.0.6] - 2019-12-17
 
 ### Added

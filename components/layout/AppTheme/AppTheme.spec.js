@@ -24,4 +24,12 @@ describe('AppTheme', () => {
       expect(wrapper.emitted().input).toBeTruthy()
     })
   })
+  /** Props */
+  describe('Props', () => {
+    test('have a HTML button what change based in theme', () => {
+      const nPropsData = { ...propsData, value: 'dark' }
+      const wrapper = mount(AppTheme, { propsData: nPropsData })
+      expect(wrapper.find('button.button--outlined')).toBeTruthy()
+    })
+  })
 })

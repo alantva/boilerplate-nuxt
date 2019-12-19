@@ -13,36 +13,25 @@ This button is amazing, use it responsibly.
 </div>
 ```
 
-<strong>Solid</strong>
+<strong>Design - Solid</strong>
 
 ```jsx
 <div class="theme--light">
-  <Button solid>Default</Button>
-  <Button solid color="primary">Primary</Button>
-  <Button solid color="secondary">Secondary</Button>
-  <Button solid color="error">Error</Button>
+  <Button button-design="solid">Default</Button>
+  <Button button-design="solid" color="primary">Primary</Button>
+  <Button button-design="solid" color="secondary">Secondary</Button>
+  <Button button-design="solid" color="error">Error</Button>
 </div>
 ```
 
-<strong>Outlined</strong>
+<strong>Design - Outlined</strong>
 
 ```jsx
 <div class="theme--light">
-  <Button outlined>Default</Button>
-  <Button outlined color="primary">Primary</Button>
-  <Button outlined color="secondary">Secondary</Button>
-  <Button outlined color="error">Error</Button>
-</div>
-```
-
-<strong>Solid + Outlined</strong>
-
-```jsx
-<div class="theme--light">
-  <Button solid outlined>Default</Button>
-  <Button solid outlined color="primary">Primary</Button>
-  <Button solid outlined color="secondary">Secondary</Button>
-  <Button solid outlined color="error">Error</Button>
+  <Button button-design="outlined">Default</Button>
+  <Button button-design="outlined" color="primary">Primary</Button>
+  <Button button-design="outlined" color="secondary">Secondary</Button>
+  <Button button-design="outlined" color="error">Error</Button>
 </div>
 ```
 
@@ -64,10 +53,10 @@ You can use this button as in this example.
 ```jsx
 <template>
   <div class="theme--light">
-    <Button outlined color="primary" @click="counter = 0">
+    <Button button-design="outlined" color="primary" @click="counter = 0">
       Reset
     </Button>
-    <Button solid :color="getColor" @click="counter++">
+    <Button button-design="solid" :color="getColor" @click="counter++">
       {{ getText }}
     </Button>
   </div>

@@ -1,18 +1,36 @@
 <template>
   <div class="container">
     <div class="wrapper">
-      <Label typography="title">Boilerplate Nuxt</Label>
-      <Label>{{ description }}</Label>
-      <Label typography="caption">v{{ version }}</Label>
-      <div class="links">
-        <Button solid color="primary" @click="handleDocumentation">
-          Documentation
-        </Button>
-        <Button solid color="secondary" @click="handleGithub">GitHub</Button>
-        <Button solid color="error" @click="handleChangelog">
-          Changelog
-        </Button>
-      </div>
+      <Box>
+        <div class="box-wrapper">
+          <Label typography="title">Boilerplate Nuxt</Label>
+          <Label>{{ description }}</Label>
+          <Label typography="caption">v{{ version }}</Label>
+          <div class="links">
+            <Button
+              button-design="solid"
+              color="primary"
+              @click="handleDocumentation"
+            >
+              Documentation
+            </Button>
+            <Button
+              button-design="solid"
+              color="secondary"
+              @click="handleGithub"
+            >
+              GitHub
+            </Button>
+            <Button
+              button-design="solid"
+              color="error"
+              @click="handleChangelog"
+            >
+              Changelog
+            </Button>
+          </div>
+        </div>
+      </Box>
     </div>
   </div>
 </template>
@@ -56,6 +74,11 @@ export default {
   .wrapper {
     display: flex;
     flex-direction: column;
+  }
+  .box-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 15px 50px 15px;
   }
 }
 

@@ -1,14 +1,14 @@
 <template>
   <div class="theme-links--wrapper">
     <Button
-      :outlined="isThemeActive('dark')"
+      v-bind="getButtonAttrs('dark')"
       color="primary"
       @click="handleInput('dark')"
     >
       Dark
     </Button>
     <Button
-      :outlined="isThemeActive('light')"
+      v-bind="getButtonAttrs('light')"
       color="secondary"
       @click="handleInput('light')"
     >
@@ -35,6 +35,16 @@ export default {
     }
   },
   methods: {
+    /**
+     * Get the button attrs based on theme.
+     * @param {String} theme
+     * @public
+     */
+    getButtonAttrs(theme) {
+      return {
+        buttonDesign: this.isThemeActive(theme) ? 'outlined' : null
+      }
+    },
     /**
      * Validates if the theme is active.
      * @param {String} theme
