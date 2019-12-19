@@ -9,16 +9,12 @@ This box is amazing, use it responsibly.
   <div class="container">
     <div class="theme--dark">
       <Box>
-        <div class="box-wrapper">
-          <Label>Dark theme!</Label>
-        </div>
+        <Label>Dark theme!</Label>
       </Box>
     </div>
     <div class="theme--light">
       <Box>
-        <div class="box-wrapper">
-          <Label>Light theme!</Label>
-        </div>
+        <Label>Light theme!</Label>
       </Box>
     </div>
   </div>
@@ -28,9 +24,6 @@ This box is amazing, use it responsibly.
 .container {
   display: flex;
   justify-content: space-evenly;
-}
-.box-wrapper {
-  padding: 50px;
 }
 </style>
 ```

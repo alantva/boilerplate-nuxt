@@ -6,6 +6,10 @@
 
 <script>
 export default {
+  /**
+   * Box component.
+   * @displayName Box
+   */
   name: 'Box'
 }
 </script>
@@ -18,6 +22,7 @@ export default {
       $backgroundColor: t($theme, 'background');
       border-bottom-left-radius: 10px;
       border-top-right-radius: 10px;
+      padding: 50px 15px;
       @include basicAnimation(fadeInUp, 0.5s);
       /* Theme Style */
       @if $theme == 'dark' {
