@@ -40,7 +40,7 @@ $ yarn generate:gh-pages
 # push the dist repository
 $ git add dist -f
 $ git commit -n -m "Deploying to gh-pages"
-$ git push
+$ git push origin master
 
 # deploy to gh-pages
 $ yarn deploy:gh-pages
@@ -135,6 +135,7 @@ This control is currently located in the file: [layouts/default.vue](/layouts/de
 
 ## UI
 
+- [Box](/components/ui/Box)
 - [Button](/components/ui/Button)
 - [Checkbox](/components/ui/Checkbox)
 - [Input](/components/ui/Input)

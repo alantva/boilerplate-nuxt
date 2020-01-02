@@ -118,6 +118,7 @@ export default {
     position: absolute;
     user-select: none;
     transition: transform 0.2s ease-in;
+    pointer-events: none;
     &.select--active {
       transform: rotate(180deg);
     }
