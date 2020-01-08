@@ -135,6 +135,7 @@ This control is currently located in the file: [layouts/default.vue](/layouts/de
 
 ## UI
 
+- [Autocomplete](/components/ui/Autocomplete)
 - [Box](/components/ui/Box)
 - [Button](/components/ui/Button)
 - [Checkbox](/components/ui/Checkbox)

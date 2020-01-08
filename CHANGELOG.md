@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.8] - 2019-01-08
+
+### Added
+
+- [`<Autocomplete>`](/components/ui/Autocomplete) component.
+- [Font Awesome 4.7](https://fontawesome.com/v4.7.0/icons) configuration.
+
 ## [0.0.7] - 2019-12-19
 
 ### Added

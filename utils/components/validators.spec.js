@@ -31,7 +31,7 @@ describe('Validators', () => {
       })
     })
   })
-  /** SelectOptions */
+  /** AutocompleteOptions and SelectOptions */
   const trueSelectOptions = [
     [{ value: 1, text: "It's a test!" }],
     [{ value: 1, text: "It's a test!" }, { value: 2, text: "It's a test too!" }]
@@ -46,11 +46,13 @@ describe('Validators', () => {
     trueSelectOptions.forEach((selectOption) => {
       test(`The array ${JSON.stringify(selectOption)} must be truthy`, () => {
         expect(Validators.selectOptions(selectOption)).toBeTruthy()
+        expect(Validators.autocompleteOptions(selectOption)).toBeTruthy()
       })
     })
     falseSelectOptions.forEach((selectOption) => {
       test(`The array ${JSON.stringify(selectOption)} must be falsy`, () => {
         expect(Validators.selectOptions(selectOption)).toBeFalsy()
+        expect(Validators.autocompleteOptions(selectOption)).toBeFalsy()
       })
     })
   })

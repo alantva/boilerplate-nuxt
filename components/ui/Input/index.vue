@@ -1,5 +1,5 @@
 <template>
-  <input type="text" @input.prevent="handleInput" />
+  <input type="text" v-bind="$attrs" @input.prevent="handleInput" />
 </template>
 
 <script>
@@ -9,16 +9,6 @@ export default {
    * @displayName Input
    */
   name: 'Input',
-  props: {
-    /**
-     * Model value.
-     * @model
-     */
-    value: {
-      type: String,
-      default: null
-    }
-  },
   methods: {
     /**
      * Is called when the user types on the input.
