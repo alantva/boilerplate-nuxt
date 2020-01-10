@@ -34,7 +34,10 @@ describe('Validators', () => {
   /** AutocompleteOptions and SelectOptions */
   const trueSelectOptions = [
     [{ value: 1, text: "It's a test!" }],
-    [{ value: 1, text: "It's a test!" }, { value: 2, text: "It's a test too!" }]
+    [
+      { value: 1, text: "It's a test!" },
+      { value: 2, text: "It's a test too!" }
+    ]
   ]
   const falseSelectOptions = [
     [{ id: 1, text: "It's a test!" }],

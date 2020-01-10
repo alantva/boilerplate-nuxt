@@ -144,6 +144,7 @@ This control is currently located in the file: [layouts/default.vue](/layouts/de
 - [Radio](/components/ui/Radio)
 - [Select](/components/ui/Select)
 - [Spinner](/components/ui/Spinner)
+- [Toggler](/components/ui/Toggler)
 
 ## How to create a component?
 

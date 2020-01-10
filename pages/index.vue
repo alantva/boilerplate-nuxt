@@ -7,16 +7,16 @@
         <Label typography="caption">v{{ version }}</Label>
         <div class="links">
           <Button
+            @click="handleDocumentation"
             button-design="solid"
             color="primary"
-            @click="handleDocumentation"
           >
             Documentation
           </Button>
-          <Button button-design="solid" color="secondary" @click="handleGithub">
+          <Button @click="handleGithub" button-design="solid" color="secondary">
             GitHub
           </Button>
-          <Button button-design="solid" color="error" @click="handleChangelog">
+          <Button @click="handleChangelog" button-design="solid" color="error">
             Changelog
           </Button>
         </div>

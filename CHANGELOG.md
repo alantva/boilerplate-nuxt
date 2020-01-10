@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0] - 2019-01-10
+
+### Added
+
+- [`<Toggler>`](/components/ui/Toggler) component.
+
+### Changed
+
+- Update package version (requires Node >= 10 ).
+
 ## [0.0.8] - 2019-01-08
 
 ### Added
