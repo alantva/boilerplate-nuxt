@@ -1,5 +1,6 @@
 <template>
   <div class="box">
+    <!-- @slot Use this slot to place the box content. -->
     <slot></slot>
   </div>
 </template>

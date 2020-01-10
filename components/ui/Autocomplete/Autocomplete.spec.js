@@ -42,8 +42,22 @@ describe('Autocomplete', () => {
       const nPropsData = { ...propsData, options }
       const wrapper = mount(Autocomplete, { propsData: nPropsData })
       wrapper.vm.openAction()
-      wrapper.find('Input').setValue('one')
-      expect(wrapper.emitted().search).toBeTruthy()
+      wrapper.vm.searchAction('one')
+      expect(wrapper.emitted().search[0][0]).toBe('one')
+    })
+    test('should filter suggestions', () => {
+      const nPropsData = { ...propsData, options }
+      const wrapper = mount(Autocomplete, { propsData: nPropsData })
+      wrapper.vm.openAction()
+      wrapper.vm.searchAction('one')
+      expect(wrapper.vm.findSuggestions()).toHaveLength(1)
+    })
+    test('should not filter suggestions', () => {
+      const nPropsData = { ...propsData, options }
+      const wrapper = mount(Autocomplete, { propsData: nPropsData })
+      wrapper.vm.openAction()
+      wrapper.vm.searchAction('')
+      expect(wrapper.vm.findSuggestions()).toHaveLength(3)
     })
     test('if disabled, don\'t emit "search" when typed', () => {
       const nPropsData = { ...propsData, disabled: true }
@@ -79,7 +93,7 @@ describe('Autocomplete', () => {
       const wrapper = mount(Autocomplete, { propsData: nPropsData })
       wrapper.vm.selectedAction(options[0])
       expect(wrapper.vm.selected).toBeTruthy()
-      wrapper.find('.autocomplete--clear').trigger('click')
+      wrapper.vm.clearAction()
       expect(wrapper.vm.selected).toBeFalsy()
     })
   })

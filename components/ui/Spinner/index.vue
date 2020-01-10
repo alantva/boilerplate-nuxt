@@ -1,11 +1,15 @@
 <template>
-  <div class="spinner" :class="getSpinnerClass"></div>
+  <div :class="getSpinnerClass" class="spinner"></div>
 </template>
 
 <script>
 import Validators from '../../../utils/components/validators'
 
 export default {
+  /**
+   * Spinner component.
+   * @displayName Spinner
+   */
   name: 'Spinner',
   props: {
     /**

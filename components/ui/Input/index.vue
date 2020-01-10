@@ -1,5 +1,9 @@
 <template>
-  <input type="text" v-bind="$attrs" @input.prevent="handleInput" />
+  <input
+    v-bind="$attrs"
+    @input="$emit('input', $event.target.value)"
+    type="text"
+  />
 </template>
 
 <script>
@@ -8,22 +12,7 @@ export default {
    * Input component.
    * @displayName Input
    */
-  name: 'Input',
-  methods: {
-    /**
-     * Is called when the user types on the input.
-     * @param {Event} event
-     * @public
-     */
-    handleInput(event) {
-      /**
-       * Triggered when input is typed
-       * @event input
-       * @type {Boolean}
-       */
-      return this.$emit('input', event.target.value)
-    }
-  }
+  name: 'Input'
 }
 </script>
 

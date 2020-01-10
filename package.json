@@ -4,8 +4,8 @@
   "description": "My Nuxt.js project",
   "author": "Alan Timossi Farias de Oliveira",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/alantva/boilerplate-nuxt"
+    "type": "git",
+    "url": "https://github.com/alantva/boilerplate-nuxt"
   },
   "private": true,
   "scripts": {
@@ -47,7 +47,8 @@
     "@nuxtjs/pwa": "^3.0.0-0",
     "@nuxtjs/style-resources": "^1.0.0",
     "express": "^4.16.4",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "vue-template-compiler": "^2.6.11"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",

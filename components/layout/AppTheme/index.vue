@@ -2,15 +2,15 @@
   <div class="theme-links--wrapper">
     <Button
       v-bind="getButtonAttrs('dark')"
-      color="primary"
       @click="handleInput('dark')"
+      color="primary"
     >
       Dark
     </Button>
     <Button
       v-bind="getButtonAttrs('light')"
-      color="secondary"
       @click="handleInput('light')"
+      color="secondary"
     >
       Light
     </Button>
@@ -38,7 +38,6 @@ export default {
     /**
      * Get the button attrs based on theme.
      * @param {String} theme
-     * @public
      */
     getButtonAttrs(theme) {
       return {
@@ -48,7 +47,6 @@ export default {
     /**
      * Validates if the theme is active.
      * @param {String} theme
-     * @public
      */
     isThemeActive(theme) {
       return this.value === theme
@@ -56,7 +54,6 @@ export default {
     /**
      * Is called when the user changes the theme.
      * @param {String} theme
-     * @public
      */
     handleInput(theme) {
       /**

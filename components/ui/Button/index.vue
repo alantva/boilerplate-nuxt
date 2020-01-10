@@ -1,5 +1,5 @@
 <template>
-  <button type="button" :class="getButtonClass" @click="handleClick">
+  <button :class="getButtonClass" @click="$emit('click', $event)" type="button">
     <!-- @slot Use this slot to place the button content. -->
     <slot></slot>
   </button>
@@ -42,21 +42,6 @@ export default {
         [`button--${this.color}`]: !!this.color,
         [`button--${this.buttonDesign}`]: !!this.buttonDesign
       }
-    }
-  },
-  methods: {
-    /**
-     * Gets called when the user clicks on the button.
-     * @param {Event} event
-     * @public
-     */
-    handleClick(event) {
-      /**
-       * Triggered when button is clicked.
-       * @event click
-       * @type {Event}
-       */
-      this.$emit('click', event)
     }
   }
 }

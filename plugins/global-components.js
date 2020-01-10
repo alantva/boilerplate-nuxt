@@ -7,6 +7,7 @@ import Label from '@/components/ui/Label/index.vue'
 import Radio from '@/components/ui/Radio/index.vue'
 import Select from '@/components/ui/Select/index.vue'
 import Spinner from '@/components/ui/Spinner/index.vue'
+import Toggler from '@/components/ui/Toggler/index.vue'
 Vue.component('Autocomplete', Autocomplete)
 Vue.component('Box', Box)
 Vue.component('Button', Button)
@@ -15,3 +16,4 @@ Vue.component('Label', Label)
 Vue.component('Radio', Radio)
 Vue.component('Select', Select)
 Vue.component('Spinner', Spinner)
+Vue.component('Toggler', Toggler)

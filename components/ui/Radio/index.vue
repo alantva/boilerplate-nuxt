@@ -1,9 +1,9 @@
 <template>
   <input
-    type="radio"
     :checked="isChecked"
     :value="inputValue"
-    @input.prevent="handleInput"
+    @input.prevent="$emit('input', $event.target.value)"
+    type="radio"
   />
 </template>
 
@@ -37,21 +37,6 @@ export default {
      */
     isChecked() {
       return this.inputValue === this.value
-    }
-  },
-  methods: {
-    /**
-     * Is called when the user change the input.
-     * @param {Event} event
-     * @public
-     */
-    handleInput(event) {
-      /**
-       * Triggered when input is changed.
-       * @event input
-       * @type {Boolean}
-       */
-      return this.$emit('input', event.target.value)
     }
   }
 }

@@ -2,7 +2,7 @@
   <div class="select--wrapper">
     <select
       v-bind="$attrs"
-      @change.prevent="handleInput"
+      @change.prevent="$emit('input', $event.target.value)"
       @focus="active = true"
       @blur="active = false"
       @mouseleave="$event.target.blur()"
@@ -63,22 +63,7 @@ export default {
   },
   data: () => ({
     active: false
-  }),
-  methods: {
-    /**
-     * Gets called when the user change the selected option.
-     * @param {Event} event
-     * @public
-     */
-    handleInput(event) {
-      /**
-       * Triggered when select is changed.
-       * @event input
-       * @type {String}
-       */
-      return this.$emit('input', event.target.value)
-    }
-  }
+  })
 }
 </script>
 

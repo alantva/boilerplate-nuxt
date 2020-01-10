@@ -1,9 +1,9 @@
 <template>
   <input
-    type="checkbox"
     :checked="isChecked"
     :value="inputValue"
     @input.prevent="handleInput"
+    type="checkbox"
   />
 </template>
 
@@ -43,7 +43,6 @@ export default {
     /**
      * Is called when the user change the input.
      * @param {Event} event
-     * @public
      */
     handleInput(event) {
       const valueSet = new Set(this.value)

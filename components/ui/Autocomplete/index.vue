@@ -1,20 +1,20 @@
 <template>
-  <div class="autocomplete--wrapper" @click.stop>
+  <div @click.stop class="autocomplete--wrapper">
     <Input
       :value="search"
       v-bind="$attrs"
-      class="autocomplete--input"
       :placeholder="placeholder"
       @input="searchAction"
       @keydown.native="controlEvents"
       @click.native="openAction"
       @focus.native="openAction"
+      class="autocomplete--input"
     />
     <i :class="getStatusIcon" />
     <i
       v-if="selected"
-      class="fa fa-times autocomplete--clear"
       @click="clearAction"
+      class="fa fa-times autocomplete--clear"
     />
     <div v-if="isOpenToType" class="autocomplete--options">
       <div class="autocomplete--options-list">
@@ -27,7 +27,11 @@
           }"
           @click="selectedAction(option)"
         >
-          <slot name="option" v-bind="option">
+          <!--
+            @slot Use this slot to place the option content.
+              @binding {object} option Autocomplete option {text, value}.
+            -->
+          <slot v-bind="option" name="option">
             {{ option.text }}
           </slot>
         </div>
@@ -120,14 +124,8 @@ export default {
     document.body.removeEventListener('click', this.closeAction)
   },
   methods: {
-    isString(string) {
-      return typeof string === 'string'
-    },
     capitalize(string) {
       return string.charAt(0) + string.slice(1)
-    },
-    lowercase(string) {
-      return this.isString(string) ? string.toLowerCase() : string
     },
     escapeAction() {
       this.setSearchAsSelectedText()
@@ -171,9 +169,9 @@ export default {
       if (this.selected) this.search = this.selected.text
     },
     findSuggestions() {
-      const searchLower = this.lowercase(this.search)
+      const searchLower = this.search.toLowerCase()
       return this.options.filter((option) =>
-        this.lowercase(option.text).includes(searchLower)
+        option.text.toLowerCase().includes(searchLower)
       )
     },
     emitSearch() {
