@@ -1,12 +1,9 @@
 import { mount, createLocalVue } from '@vue/test-utils'
-import Spinner from '../Spinner/index.vue'
 import Select from './index.vue'
 
 const propsData = { value: null }
 
 const localVue = createLocalVue()
-
-localVue.component('Spinner', Spinner)
 
 describe('Select', () => {
   /** Mount */
@@ -27,7 +24,7 @@ describe('Select', () => {
     test('have enable a loading', () => {
       const nPropsData = { ...propsData, loading: true }
       const wrapper = mount(Select, { localVue, propsData: nPropsData })
-      expect(wrapper.find('.select--spinner')).toBeTruthy()
+      expect(wrapper.find('.select--status.fa-spinner')).toBeTruthy()
     })
   })
   /** Events */
@@ -36,6 +33,16 @@ describe('Select', () => {
       const wrapper = mount(Select, { propsData })
       wrapper.find('select').setValue('test')
       expect(wrapper.emitted().input).toBeTruthy()
+    })
+    test('have "chevron-down" icon when inactive', () => {
+      const wrapper = mount(Select, { propsData })
+      wrapper.setData({ active: false })
+      expect(wrapper.find('.select--status.fa-chevron-down')).toBeTruthy()
+    })
+    test('have "chevron-up" icon when active', () => {
+      const wrapper = mount(Select, { propsData })
+      wrapper.setData({ active: true })
+      expect(wrapper.find('.select--status.fa-chevron-up')).toBeTruthy()
     })
     test('have a HTML select what is not changed when disabled', () => {
       const nPropsData = { ...propsData, disabled: true }

@@ -59,21 +59,6 @@ describe('Validators', () => {
       })
     })
   })
-  /** Sizes */
-  const trueSizes = ['xs', 'sm', 'md', 'lg', 'xl']
-  const falseSizes = ['not-xs', 'not-sm', 'not-md', 'not-lg', 'not-xl']
-  describe('Sizes', () => {
-    trueSizes.forEach((size) => {
-      test(`"${size}" must be truthy`, () => {
-        expect(Validators.sizes(size)).toBeTruthy()
-      })
-    })
-    falseSizes.forEach((size) => {
-      test(`"${size}" must be falsy`, () => {
-        expect(Validators.sizes(size)).toBeFalsy()
-      })
-    })
-  })
   /** Typography */
   const trueTypography = ['title', 'subtitle', 'caption']
   const falseTypography = ['not-title', 'not-subtitle', 'not-caption']

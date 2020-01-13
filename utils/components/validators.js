@@ -13,7 +13,5 @@ export default {
 
   selectOptions: (items) => items.filter(fnOption).length === items.length,
 
-  sizes: (value) => ['xs', 'sm', 'md', 'lg', 'xl'].includes(value),
-
   typography: (value) => ['title', 'subtitle', 'caption'].includes(value)
 }

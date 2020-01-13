@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2019-01-13
+
+### Changed
+
+- [`<Select>`](/components/ui/Select) component.
+
+### Removed
+
+- [`<Spinner>`](/components/ui/Spinner) component.
+
 ## [0.1.0] - 2019-01-10
 
 ### Added

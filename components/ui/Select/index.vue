@@ -12,10 +12,7 @@
         {{ option.text }}
       </option>
     </select>
-    <Spinner v-if="loading" class="select--spinner" size="xs"></Spinner>
-    <span v-else :class="{ 'select--active': active }" class="select--arrow">
-      &#9660;
-    </span>
+    <i :class="getStatusIcon" />
   </div>
 </template>
 
@@ -63,7 +60,18 @@ export default {
   },
   data: () => ({
     active: false
-  })
+  }),
+  computed: {
+    getStatusIcon() {
+      return {
+        fa: true,
+        'fa-chevron-up': this.active && !this.loading,
+        'fa-chevron-down': !this.active && !this.loading,
+        'fa-spinner fa-spin': this.loading,
+        'select--status': true
+      }
+    }
+  }
 }
 </script>
 
@@ -91,8 +99,7 @@ export default {
     border-width: 1px;
     border-style: solid;
   }
-  .select--arrow,
-  .select--spinner {
+  .select--status {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -104,9 +111,6 @@ export default {
     user-select: none;
     transition: transform 0.2s ease-in;
     pointer-events: none;
-    &.select--active {
-      transform: rotate(180deg);
-    }
   }
 }
 @each $theme in $component-themes {
@@ -120,8 +124,7 @@ export default {
         }
       }
     }
-    .select--arrow,
-    .select--spinner {
+    .select--status {
       color: t($theme, 'text');
     }
   }
