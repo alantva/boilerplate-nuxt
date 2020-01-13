@@ -1,18 +1,7 @@
 <template>
   <div class="theme-links--wrapper">
-    <Button
-      v-bind="getButtonAttrs('dark')"
-      @click="handleInput('dark')"
-      color="primary"
-    >
-      Dark
-    </Button>
-    <Button
-      v-bind="getButtonAttrs('light')"
-      @click="handleInput('light')"
-      color="secondary"
-    >
-      Light
+    <Button @click="handleInput" color="primary" button-design="outlined">
+      <i :class="getIconClasses" />
     </Button>
   </div>
 </template>
@@ -34,16 +23,16 @@ export default {
       default: null
     }
   },
-  methods: {
-    /**
-     * Get the button attrs based on theme.
-     * @param {String} theme
-     */
-    getButtonAttrs(theme) {
+  computed: {
+    getIconClasses() {
       return {
-        buttonDesign: this.isThemeActive(theme) ? 'outlined' : null
+        fa: true,
+        'fa-moon-o': this.isThemeActive('dark'),
+        'fa-sun-o': this.isThemeActive('light')
       }
-    },
+    }
+  },
+  methods: {
     /**
      * Validates if the theme is active.
      * @param {String} theme
@@ -52,16 +41,20 @@ export default {
       return this.value === theme
     },
     /**
-     * Is called when the user changes the theme.
+     * Handle theme change.
      * @param {String} theme
      */
-    handleInput(theme) {
+    handleInput() {
+      let nTheme = 'light'
+      if (this.value === 'light') {
+        nTheme = 'dark'
+      }
       /**
        * Triggered when the user changes the theme.
        * @event input
        * @type {String}
        */
-      return this.$emit('input', theme)
+      return this.$emit('input', nTheme)
     }
   }
 }
@@ -70,6 +63,7 @@ export default {
 <style lang="scss" scoped>
 .theme-links--wrapper {
   position: absolute;
-  margin: 15px;
+  margin-top: 15px;
+  right: 15px;
 }
 </style>

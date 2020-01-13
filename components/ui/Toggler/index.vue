@@ -24,11 +24,10 @@ export default {
   },
   computed: {
     getPinClass() {
-      const classes = ['toggler--pin']
-      if (this.value) {
-        classes.push('toggler--pin-active')
+      return {
+        'toggler--pin': true,
+        'toggler--pin-active': this.value
       }
-      return classes
     }
   },
   methods: {
@@ -100,13 +99,13 @@ $height: 20px;
       &--pin {
         background-color: t($theme, 'text');
         &-active {
-          background-color: t($theme, 'primary');
           box-shadow: 0 0 3px t($theme, 'on-text');
+          background-color: t($theme, 'primary');
         }
       }
       &--base {
         box-shadow: 0 0 2px inset t($theme, 'text');
-        background-color: t($theme, 'on-text');
+        background-color: t($theme, 'background');
       }
     }
   }
