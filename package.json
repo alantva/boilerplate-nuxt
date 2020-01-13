@@ -75,6 +75,6 @@
     "stylelint-config-recommended-scss": "^4.0.0",
     "stylelint-scss": "^3.11.1",
     "vue-jest": "^4.0.0-0",
-    "vue-styleguidist": "^3.25.0"
+    "vue-styleguidist": "^4.4.3"
   }
 }

@@ -25,7 +25,8 @@ export default {
       validator: Validators.colors
     },
     /**
-     *
+     * Sets the button design.
+     * `(solid|outlined)`
      */
     buttonDesign: {
       type: String,

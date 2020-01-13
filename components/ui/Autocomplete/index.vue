@@ -29,13 +29,16 @@
         >
           <!--
             @slot Use this slot to place the option content.
-              @binding {object} option Autocomplete option {text, value}.
+            @binding option Autocomplete option {text, value}.
             -->
           <slot v-bind="option" name="option">
             {{ option.text }}
           </slot>
         </div>
         <div v-if="noResultsFound" class="autocomplete--no-results">
+          <!--
+            @slot Use this slot to a content when no results were found.
+            -->
           <slot name="no-results">
             Não foram encontrados resultados para sua pesquisa...
           </slot>
