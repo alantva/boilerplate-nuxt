@@ -44,7 +44,8 @@ module.exports = {
    */
   plugins: [
     { src: '@/plugins/global-components.js', mode: 'client' },
-    { src: '@/plugins/axios.js', mode: 'client' }
+    { src: '@/plugins/axios.js', mode: 'client' },
+    { src: '@/plugins/goto.js', mode: 'client' }
   ],
   /*
    ** Nuxt.js dev-modules
