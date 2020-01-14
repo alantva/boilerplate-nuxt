@@ -62,9 +62,9 @@ button {
   user-select: none;
   border-width: 1px;
   border-style: solid;
+  transition: background-color 0.2s ease-in, color 0.2s ease-in;
+  @include basicAnimation(fadeInUp, 0.5s);
   &:not(:disabled) {
-    @include basicAnimation(fadeInUp, 0.5s);
-    transition: background-color 0.2s ease-in, color 0.2s ease-in;
     cursor: pointer;
   }
   &:active {
