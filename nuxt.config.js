@@ -1,3 +1,5 @@
+const bodyParser = require('body-parser')
+
 require('dotenv').config()
 
 const deployRouter =
@@ -58,6 +60,16 @@ module.exports = {
    ** Nuxt.js router
    */
   ...deployRouter,
+  /**
+   * Server Middleware
+   */
+  serverMiddleware: [
+    // body-parser middleware
+    bodyParser.json(),
+    // Api middleware
+    // We add /api/login & /api/logout routes
+    '~/api'
+  ],
   /*
    ** Nuxt.js modules
    */
@@ -71,7 +83,9 @@ module.exports = {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: 'https://5671bf5c.ngrok.io'
+  },
   /**
    * Style Resources Module
    * See https://github.com/nuxt-community/style-resources-module

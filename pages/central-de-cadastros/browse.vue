@@ -1,22 +1,27 @@
 <template>
   <div class="wrapper">
     <Label>Área de Cadastros</Label>
-    <Autocomplete v-model="searchValue" :options="searchSuggestions" />
+    <Autocomplete
+      v-model="searchValue"
+      :options="searchSuggestions"
+      @search="fetchSearch"
+    />
     <div class="links">
       <Button
         @click="$goto('central-de-cadastros')"
+        :disabled="isSearching"
         button-design="solid"
         color="error"
       >
         Voltar
       </Button>
       <Button
-        @click="fetchSearch"
-        :disabled="disableSearch"
+        @click="$goto('central-de-cadastros')"
+        :disabled="disableNext"
         button-design="solid"
         color="primary"
       >
-        Buscar
+        Avançar
       </Button>
     </div>
   </div>
@@ -27,34 +32,31 @@ export default {
   name: 'CentralDeCadastrosBrowse',
   data: () => ({
     searchValue: null,
-    searchSuggestions: [
-      { text: 'AJINOMOTO', value: '000001' },
-      { text: 'CECRISA', value: '000002' },
-      { text: 'POWERVIEW', value: '000003' },
-      { text: 'DASA', value: '000004' }
-    ],
-    loading: false
+    searchSuggestions: [],
+    searchLoading: false
   }),
   computed: {
     isSearching() {
-      return this.loading
+      return this.searchLoading
     },
-    disableSearch() {
+    disableNext() {
       return !this.searchValue || this.isSearching
     }
   },
   methods: {
-    setLoading(value) {
-      this.loading = value
-    },
     fetchSearch() {
-      this.setLoading(true)
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          this.setLoading(false)
-          resolve()
-        }, 1500)
-      })
+      this.searchLoading = true
+      return this.$axios
+        .$get('/api/economic-groups')
+        .then((data) => {
+          this.searchSuggestions = data
+        })
+        .catch(() => {
+          this.searchSuggestions = []
+        })
+        .finally(() => {
+          this.searchLoading = false
+        })
     }
   }
 }
@@ -66,6 +68,16 @@ export default {
   flex-direction: column;
 }
 .links {
+  display: flex;
+  justify-content: space-between;
   padding-top: 15px;
+
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column-reverse;
+    > button:not(:first-child) {
+      margin-bottom: 5px;
+    }
+  }
 }
 </style>
